@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Juego</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="trivia-page">
+  <!-- Menú hamburguesa mobile -->
+  <nav class="hamburg-nav">
+    <button id="hamburg-btn" aria-label="Abrir menú">&#9776;</button>
+    <ul id="hamburg-menu" class="hamburg-menu">
+      <li><a href="../index.html">Inicio</a></li>
+      <li><a href="../Trabajos/Trabajos.html">Proyectos</a></li>
+      <li><a href="../Contacto/Contacto.html">Sobre mí</a></li>
+      <li><a href="../Habilidades/Habilidades.html">Habilidades</a></li>
+      <li><a class="active" href="Juego.html">Juego</a></li>
+      <li><a href="../Multimedia/index.html">Multimedia</a></li>
+    </ul>
+  </nav>
+
+  <!-- ==================== HEADER ==================== -->
+  <header>
+      <h1>Juego</h1>
+      <p class="contact-info">
+          <a href="mailto:Erbinomariano@gmail.com">Erbinomariano@gmail.com</a> |
+          <a href="https://www.linkedin.com/in/erbinomariano" target="_blank" rel="noopener">LinkedIn</a> |
+          <a href="https://www.google.com/maps/place/Quilmes,+Buenos+Aires" target="_blank" rel="noopener">Quilmes, Buenos Aires</a> |
+          <a href="tel:+5491126762031">+54 9 11 2676 2031</a>
+      </p>
+  </header>
+
+  <!-- ==================== NAV DESKTOP ==================== -->
+  <nav class="main-nav">
+    <a href="../index.html">Inicio</a>
+    <a href="../Trabajos/Trabajos.html">Proyectos</a>
+    <a href="../Habilidades/Habilidades.html">Habilidades</a>
+    <a class="active" href="./Juego.html">Juego</a>
+    <a href="../Contacto/Contacto.html">Sobre mí</a>
+    <a href="../Multimedia/index.html">Multimedia</a>
+  </nav>
+
+  <main class="contenedor">
+    <h2 id="juego-tt">Juego: ¿Qué tanto me conoces?</h2>
+
+    <!-- Radios de estado (ocultos) que controlan avance y estilos -->
+    <!-- P1 -->
+    <input type="radio" name="a1" id="a1_1" hidden>
+    <input type="radio" name="a1" id="a1_2" hidden> <!-- CORRECTA -->
+    <input type="radio" name="a1" id="a1_3" hidden>
+    <input type="radio" name="a1" id="a1_4" hidden>
+    <!-- P2 -->
+    <input type="radio" name="a2" id="a2_1" hidden>
+    <input type="radio" name="a2" id="a2_2" hidden> <!-- CORRECTA -->
+    <input type="radio" name="a2" id="a2_3" hidden>
+    <input type="radio" name="a2" id="a2_4" hidden>
+    <!-- P3 -->
+    <input type="radio" name="a3" id="a3_1" hidden>
+    <input type="radio" name="a3" id="a3_2" hidden> <!-- CORRECTA -->
+    <input type="radio" name="a3" id="a3_3" hidden>
+    <input type="radio" name="a3" id="a3_4" hidden>
+
+    <!-- Radios de avance (uno por paso) -->
+    <input type="radio" id="go2" name="go2" hidden>
+    <input type="radio" id="go3" name="go3" hidden>
+
+    <!-- PANTALLA 1 -->
+    <section class="pantalla p1">
+      <h3 class="etiqueta-pregunta">Pregunta 1</h3>
+      <div class="pregunta-ctn">
+        <p class="pregunta">¿Cuál es mi perro: Umma?</p>
+
+        <div class="respuestas-grid">
+          <!-- Ajustá cuál es la correcta editando el id correcto en CSS (a1_2 ahora) o mueve el “CORRECTA” arriba -->
+          <label for="a1_1" class="respuesta-img">
+            <img src="img/perro1.avif" alt="Perro 1 sentado en el césped">
+          </label>
+
+          <label for="a1_2" class="respuesta-img">
+            <img src="img/perro4.jpg" alt="Perro 2 color claro sentado en galería">
+          </label>
+
+          <label for="a1_3" class="respuesta-img">
+            <img src="img/perro3.webp" alt="Perro 3 sobre sillón">
+          </label>
+
+          <label for="a1_4" class="respuesta-img">
+            <img src="img/perro2.jpg" alt="Perro 4 con pañuelo rojo">
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEEDBACK CORRECTO P1 -->
+    <div class="feedback-correct feedback-c1">
+      <div class="feedback-box">
+        <span class="tick">✓</span>
+        <p>¡Correcto!</p>
+        <label class="btn-continuar" for="go2">Continuar</label>
+      </div>
+    </div>
+
+    <!-- PANTALLA 2 (reemplazá el enunciado e imágenes) -->
+    <section class="pantalla p2">
+      <h3 class="etiqueta-pregunta">Pregunta 2</h3>
+      <div class="pregunta-ctn">
+        <p class="pregunta">¿Cuál es mi artista favorito?</p>
+        <div class="respuestas-grid">
+          <label for="a2_1" class="respuesta-img">
+            <img src="img/artista2.jpg" alt="Opción 1">
+          </label>
+          <label for="a2_2" class="respuesta-img">
+            <img src="img/artista1.avif" alt="Opción 2">
+          </label>
+          <label for="a2_3" class="respuesta-img">
+            <img src="img/artista3.png" alt="Opción 3">
+          </label>
+          <label for="a2_4" class="respuesta-img">
+            <img src="img/artista4.webp" alt="Opción 4">
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEEDBACK CORRECTO P2 -->
+    <div class="feedback-correct feedback-c2">
+      <div class="feedback-box">
+        <span class="tick">✓</span>
+        <p>¡Correcto!</p>
+        <label class="btn-continuar" for="go3">Continuar</label>
+      </div>
+    </div>
+
+    <!-- PANTALLA 3 -->
+    <section class="pantalla p3">
+      <h3 class="etiqueta-pregunta">Pregunta 3</h3>
+      <div class="pregunta-ctn">
+        <p class="pregunta">¿De que equipo soy hincha?</p>
+        <div class="respuestas-grid">
+          <label for="a3_1" class="respuesta-img">
+            <img src="img/club2.jpg" alt="Opción 1">
+          </label>
+          <label for="a3_2" class="respuesta-img">
+            <img src="img/club1.jpg" alt="Opción 2">
+          </label>
+          <label for="a3_3" class="respuesta-img">
+            <img src="img/club3.png" alt="Opción 3">
+          </label>
+          <label for="a3_4" class="respuesta-img">
+            <img src="img/club4.png" alt="Opción 4">
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEEDBACK CORRECTO P3 (final con meme) -->
+    <div class="feedback-correct feedback-c3">
+      <div class="feedback-box final">
+        <img class="meme-final" src="img/felicitaciones.jpg" alt="¡Felicitaciones!">
+        <p>¡Felicitaciones! Completaste el juego.</p>
+        <a class="btn-continuar" href="../index.html">Volver al inicio</a>
+      </div>
+    </div>
+
+    <!-- (Elimina o comenta estas dos líneas si ya no usas la pantalla final)
+    <input type="radio" id="goEnd" name="goEnd" hidden>
+    -->
+    <!-- (Opcional: elimina la sección final si ya no se mostrará)
+    <section class="pantalla pfin">...</section>
+    -->
+
+    <!-- MODAL ERROR (se activa al elegir una opción incorrecta) -->
+    <div class="modal-error" role="alert" aria-labelledby="err-title" aria-describedby="err-desc">
+      <div class="modal-error-box">
+        <h3 id="err-title">Opción incorrecta</h3>
+        <p id="err-desc">Intentalo de nuevo desde el principio.</p>
+        <div class="respuesta-img">
+          <img src="img/error.jpg" alt="Ilustración de respuesta incorrecta">
+        </div>
+        <a href="Juego.html" class="btn-reintentar">Volver a jugar</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <nav>
+      <a href="../index.html">Inicio</a> |
+      <a href="../Trabajos/Trabajos.html">Proyectos</a> |
+      <a href="../Habilidades/Habilidades.html">Habilidades</a> |
+      <a href="./Juego.html" class="active">Juego</a> |
+      <a href="../Contacto/Contacto.html">Sobre mí</a> |
+      <a href="../Multimedia/index.html">Multimedia</a>
+    </nav>
+    <p>&copy; 2025 Mariano Erbino - Todos los derechos reservados.</p>
+  </footer>
+  <script src="../js/home.js"></script>
+</body>
+</html>

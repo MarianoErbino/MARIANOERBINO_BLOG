@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre mi - Mariano Erbino</title>
+    <link rel="icon" type="image/png" href="../img/icono.jpg">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="contacto-page">
+    <!-- ==================== INICIO MENÚ HAMBURGUESA ==================== -->
+    <nav class="hamburg-nav">
+        <button id="hamburg-btn" aria-label="Abrir menú">&#9776;</button>
+        <ul id="hamburg-menu" class="hamburg-menu">
+            <!-- Actualizado: mismas opciones que Inicio -->
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="../Trabajos/Trabajos.html">Proyectos</a></li>
+            <li><a class="active" href="Contacto.html">Sobre mí</a></li>
+            <li><a href="../Habilidades/Habilidades.html">Habilidades</a></li>
+            <li><a href="../Juego/Juego.html">Juego</a></li>
+            <li><a href="../Multimedia/index.html">Multimedia</a></li>
+        </ul>
+    </nav>
+    <!-- ==================== FIN MENÚ HAMBURGUESA ==================== -->
+
+    <!-- ==================== INICIO HEADER ==================== -->
+    <header>
+        <h1>Mariano Erbino</h1>
+        <h2>Sobre mí</h2>
+        <p>
+            <a href="mailto:Erbinomariano@gmail.com">Erbinomariano@gmail.com</a> |
+            <a href="https://www.linkedin.com/in/erbinomariano">LinkedIn</a> |
+            <a href="https://www.google.com/maps/place/Quilmes,+Buenos+Aires" target="_blank">Quilmes, Buenos Aires</a> |
+            <a href="tel:+5491126782031">+54 9 11 2676 2031</a>
+        </p>
+    </header>
+    <!-- ==================== FIN HEADER ==================== -->
+
+    <!-- ==================== INICIO NAV DESKTOP ==================== -->
+    <nav class="main-nav">
+        <!-- Actualizado: mismas opciones que Inicio -->
+        <a href="../index.html">Inicio</a>
+        <a href="../Trabajos/Trabajos.html">Proyectos</a>
+        <a class="active" href="Contacto.html">Sobre mi</a>
+        <a href="../Habilidades/Habilidades.html">Habilidades</a>
+        <a href="../Juego/Juego.html">Juego</a>
+        <a href="../Multimedia/index.html">Multimedia</a>
+    </nav>
+    <!-- ==================== FIN NAV DESKTOP ==================== -->
+
+    <div class="contenedor">
+        <section class="form">
+            <h3 id="mensaje1">¡Para conocernos mejor, completa el siguiente formulario!</h3>
+            
+            <!-- Imagen de perfil -->
+            <div class="profile-image-container">
+                <img src="../img/Perfil.png" alt="Mariano Erbino" class="profile-image">
+            </div>
+            
+            <!-- Párrafo introductorio -->
+            <p class="intro-contacto">
+                Estoy siempre abierto a escuchar nuevas ideas y proyectos. Si te gustó alguno de mis trabajos y te gustaría contactarme, no dudes en hacerlo. Me emociona la posibilidad de colaborar en proyectos que transformen datos en valor real para tu negocio.
+            </p>
+            
+            <form id="contacto-form" novalidate>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required minlength="2" maxlength="50" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$" placeholder="Ingresa tu nombre">
+
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" required minlength="2" maxlength="50" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$" placeholder="Ingresa tu apellido">
+
+                <label for="entidad">Entidad/Institución:</label>
+                <input type="text" id="entidad" name="entidad" maxlength="100" placeholder="Empresa, universidad, organización, etc.">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="ejemplo@correo.com">
+
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" maxlength="20" placeholder="Ej: +54 9 11 1234 5678">
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" minlength="10" maxlength="500" placeholder="Cuéntame sobre tu proyecto, idea o consulta. ¿En qué puedo ayudarte?"></textarea>
+
+                <label for="motivo">Motivo de contacto:</label>
+                <select id="motivo" name="motivo">
+                    <option value="">Seleccionar</option>
+                    <option value="trabajo">Trabajo</option>
+                    <option value="colaboracion">Colaboración</option>
+                    <option value="consulta">Consulta</option>
+                    <option value="otro">Otro</option>
+                </select>
+
+                <label for="referencia">¿Cómo me encontraste?</label>
+                <select id="referencia" name="referencia">
+                    <option value="">Seleccionar</option>
+                    <option value="linkedin">LinkedIn</option>
+                    <option value="google">Google</option>
+                    <option value="referido">Referido</option>
+                    <option value="otro">Otro</option>
+                </select>
+
+                <label>
+                    <input type="checkbox" id="privacidad" name="privacidad" required>
+                    Acepto el uso de mis datos para ser contactado.
+                </label>
+
+                <button type="submit" id="btn-enviar">Enviar</button>
+                <div id="form-msg" style="margin-top:1em;"></div>
+            </form>
+        </section>
+    </div>
+
+    <!-- Botones de contacto directo -->
+    <div class="contact-buttons">
+        <a href="mailto:Erbinomariano@gmail.com" class="contact-btn email-btn">
+            Email
+        </a>
+        <a href="https://wa.me/5491126782031" target="_blank" class="contact-btn whatsapp-btn">
+            WhatsApp
+        </a>
+        <a href="https://www.linkedin.com/in/erbinomariano" target="_blank" class="contact-btn linkedin-btn">
+            LinkedIn
+        </a>
+        <a href="#" class="contact-btn cv-btn" onclick="alert('CV próximamente disponible')">
+            Descargar CV
+        </a>
+    </div>
+
+    <!-- CTA Final -->
+    <div class="cta-final">
+        <p class="cta-quote">"Convirtamos datos en decisiones que mueven tu negocio"</p>
+    </div>
+
+    <!-- ==================== INICIO FOOTER ==================== -->
+    <footer>
+        <h3>Contacto</h3>
+        <p>¿Te gustaría contactarme? <br>
+        <a href="mailto:Erbinomariano@gmail.com">Envíame un email</a></p>
+        <nav class="links-nav">
+            <!-- Actualizado: mismas opciones que Inicio -->
+            <a href="../index.html">Inicio</a> |
+            <a href="../Trabajos/Trabajos.html">Proyectos</a> |
+            <a href="Contacto.html" class="active">Contacto</a> |
+            <a href="../Habilidades/Habilidades.html">Habilidades</a> |
+            <a href="../Juego/Juego.html">Juego</a> |
+            <a href="../Contacto/Contacto.html">Sobre mí</a> |
+            <a href="../Multimedia/index.html">Multimedia</a>
+        </nav>
+    </footer>
+    <!-- ==================== FIN FOOTER ==================== -->
+
+    <script src="../js/contacto.js"></script>
+</body>
+</html>
