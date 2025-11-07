@@ -1,0 +1,1393 @@
+/* =========================== INICIO CSS (Refactor 2 media queries) =========================== */
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap);
+
+/* ============== RESET & BASE ============== */
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  list-style:none;
+  text-decoration: none;
+}
+html { overflow-x:hidden; }
+body {
+  font-family:'Montserrat',sans-serif;
+  background:#e6f4fa url("img/Fondo.avif") center / cover no-repeat fixed;
+  color:#000;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ============== HEADER ============== */
+header {
+  background:#fff;
+  padding:1rem;
+  text-align:center;
+  border-bottom-left-radius:24px;
+  border-bottom-right-radius:24px;
+}
+header h1 {
+  margin:0;
+  font-size:clamp(2rem,6vw,2.5rem);
+  letter-spacing:2px;
+  color:#000;
+}
+header h2 {
+  font-size:clamp(1.2rem,4.5vw,1.8rem);
+  color:#000;
+  font-weight:400;
+  margin:.5rem 0 1rem;
+}
+header p { color:#000; font-size:1rem; }
+
+/* ============== NAV (desktop se activa en media desktop) ============== */
+.main-nav { display:none; }
+
+/* Links genéricos */
+header a,
+section a,
+footer a,
+footer nav a {
+  color:#009fe3;
+  text-decoration:none;
+  margin:0 .5rem;
+  transition:color .2s;
+  font-size:1.1em;
+}
+header a:active,
+section a:active,
+footer a:active,
+footer nav a:active { color:#e63946; }
+
+/* ============== SECCIONES & FOOTER ============== */
+section, footer {
+  max-width:700px;
+  margin:2rem;
+  background:#fff;
+  padding:.5rem;
+  border-radius:24px;
+  box-shadow:0 2px 8px rgba(0,0,0,.03);
+  transition:box-shadow .3s, transform .3s;
+  border-left:5px solid #009fe3;
+}
+section h3, footer h3 {
+  color:#000;
+  font-weight:600;
+  letter-spacing:1px;
+  padding-bottom:1em;
+  text-align:center;
+}
+footer {
+  text-align:center;
+  font-size:1rem;
+  color:#000;
+  margin:0;
+  max-width:100%;
+  border-radius:48px 48px 0 0;
+  border:none;
+}
+footer nav a:hover { color:#444; }
+
+/* ============== MODALS ============== */
+.modal {
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  overflow:auto;
+  background:rgba(0,0,0,.5);
+}
+.modal-content {
+  background:#fff;
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  padding:40px 60px;
+  border-radius:18px;
+  width:90%;
+  max-width:800px;
+  box-shadow:0 2px 10px rgba(0,0,0,.2);
+  text-align:center;
+  z-index:1100;
+}
+.close {
+  position:absolute;
+  right:20px;
+  top:15px;
+  font-size:36px;
+  font-weight:bold;
+  color:#888;
+  cursor:pointer;
+  margin:0;
+  line-height:1;
+}
+.modal-logo {
+  display:block;
+  margin:0 auto 10px;
+  max-width:80px;
+  max-height:50px;
+}
+.ver-mas { font-size:.9em; margin-left:8px; }
+#btn-leer-mas {
+  display:block;
+  margin:1em auto 0;
+  padding:.6em 1.5em;
+  background:#009fe3;
+  color:#fff;
+  border:none;
+  border-radius:25px;
+  font-size:1rem;
+  cursor:pointer;
+  transition:.2s;
+  box-shadow:0 2px 6px rgba(0,0,0,.08);
+}
+#btn-leer-mas:hover {
+  background:#007bb8;
+  transform:translateY(-2px) scale(1.05);
+  box-shadow:0 4px 12px rgba(0,159,227,.15);
+}
+
+/* ============== MENÚ HAMBURGUESA (mobile) ============== */
+.hamburg-nav {
+  width:100%;
+  display:flex;
+  justify-content:flex-end;
+  align-items:flex-start;
+  position:relative;
+  padding:.5em 2rem .5em 0;
+  z-index:2000;
+  background:#fff;
+}
+#hamburg-btn {
+  background:none;
+  border:none;
+  font-size:2rem;
+  cursor:pointer;
+  color:#000;
+  transition:color .2s;
+}
+#hamburg-btn:hover { color:#007bb8; }
+.hamburg-menu {
+  display:none;
+  position:absolute;
+  left:0; right:0;
+  top:3.8rem;
+  width:100%;
+  background:#c0c0c0;
+  border-radius:0 0 10px 10px;
+  box-shadow:0 4px 16px rgba(0,0,0,.12);
+  margin:0;
+  text-align:center;
+  box-sizing:border-box;
+}
+.hamburg-menu li {
+  margin:1rem 0;
+  border-bottom:1px solid #555;
+  padding-bottom:.5rem;
+}
+.hamburg-menu li:last-child { border-bottom:none; }
+.hamburg-menu li a {
+  color:#009fe3;
+  font-weight:600;
+  font-size:1.2rem;
+}
+.hamburg-menu li a:hover { color:#007bb8; }
+.hamburg-menu.show { display:block; }
+
+/* ============== FORMULARIO CONTACTO ============== */
+#contacto-form {
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+  max-width:400px;
+  margin:0 auto;
+}
+#contacto-form label { font-weight:600; margin-bottom:.2em; }
+#contacto-form input,
+#contacto-form textarea {
+  padding:.6em;
+  border:1px solid #ccc;
+  border-radius:8px;
+  font-size:1rem;
+  font-family:inherit;
+  resize:vertical;
+}
+#contacto-form textarea { min-height:100px; max-height:300px; text-align:left; }
+#contacto-form select {
+  width:100%;
+  padding:.6em;
+  border:1px solid #ccc;
+  border-radius:8px;
+  font-size:1rem;
+  background:#fff;
+  margin-bottom:.5em;
+  font-family:inherit;
+}
+#contacto-form input:focus,
+#contacto-form textarea:focus { outline:none; }
+#btn-enviar {
+  background:#009fe3;
+  color:#fff;
+  border:none;
+  border-radius:25px;
+  padding:.6em 1.5em;
+  font-size:1rem;
+  cursor:pointer;
+  transition:.2s;
+  box-shadow:0 2px 6px rgba(0,0,0,.08);
+  margin-top:.5em;
+}
+#btn-enviar:hover {
+  background:#007bb8;
+  transform:translateY(-2px) scale(1.05);
+  box-shadow:0 4px 12px rgba(0,159,227,.15);
+}
+#mensaje { padding-bottom:1em; text-align:center; }
+
+/* ============== PUSHPOP EXITO ============== */
+.pushpop-exito {
+  position:fixed;
+  top:50%; left:50%;
+  transform:translate(-50%,-50%) scale(.9);
+  background:#9fd0a5;
+  border:2px solid #2ecc40;
+  color:#222;
+  padding:2em 2.5em;
+  border-radius:16px;
+  box-shadow:0 8px 32px rgba(44,204,64,.15),0 2px 8px rgba(0,0,0,.08);
+  font-size:1.2rem;
+  text-align:center;
+  z-index:9999;
+  opacity:0;
+  transition:.3s;
+  pointer-events:none;
+}
+.pushpop-exito.show {
+  opacity:1;
+  transform:translate(-50%,-50%) scale(1);
+}
+
+/* ============== ASIDE PERFIL (desktop visible) ============== */
+.img-aside { display:none; padding:1rem; box-sizing:border-box; }
+.profile-img {
+  width:100%; max-width:100%; height:auto;
+  object-fit:cover; border-radius:8px;
+  margin-bottom:1rem;
+  box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+.img-aside p {
+  margin-bottom:1.5rem;
+  color:#333;
+  line-height:1.5;
+}
+
+/* Nav links wrapper */
+.links-nav { padding:1em; }
+
+/* Hover scale */
+section.agrandado,
+footer.agrandado {
+  transform:scale(1.04);
+  box-shadow:0 8px 24px rgba(0,0,0,.12),0 1.5px 6px rgba(0,0,0,.08);
+  z-index:2;
+}
+
+/* ============== CONTACTO PAGE EXTRA ============== */
+.intro-contacto {
+  background:#f8f9fa;
+  padding:1.5rem;
+  border-radius:12px;
+  margin-bottom:2rem;
+  text-align:left;
+  color:#555;
+  line-height:1.6;
+}
+.contact-buttons {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1rem;
+  margin:1rem auto;
+  padding:0;
+  max-width:700px;
+  justify-items:center;
+}
+.contact-btn {
+  color:#009fe3;
+  text-decoration:none;
+  font-weight:600;
+  font-size:.9rem;
+  padding:.8em .5em;
+  border-radius:12px;
+  background:#fff;
+  border:1px solid #e0e0e0;
+  box-shadow:0 2px 8px rgba(0,0,0,.05);
+  transition:.2s;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:130px;
+  height:50px;
+  text-align:center;
+}
+.contact-btn:hover {
+  background:#009fe3;
+  color:#fff;
+  box-shadow:0 4px 12px rgba(0,159,227,.15);
+  transform:translateY(-2px);
+}
+.cta-final { text-align:center; padding:2rem; }
+.cta-quote {
+  font-size:clamp(1.2rem,4.5vw,1.8rem);
+  font-weight:600;
+  color:#fff;
+  margin:0;
+  font-style:italic;
+  line-height:1.4;
+}
+
+/* ============== PROFILE IMAGE ROUND ============== */
+.profile-image-container { display:flex; justify-content:center; }
+.profile-image {
+  width:280px; height:280px;
+  border-radius:50%;
+  border:4px solid #009fe3;
+  object-fit:cover;
+  box-shadow:0 4px 8px rgba(0,0,0,.1);
+  transition:.3s;
+}
+.profile-image:hover { transform:scale(1.05); }
+
+/* ============== SKILLS TABLE ============== */
+.skills-table-container {
+  max-width:1200px;
+  margin:2.5rem auto 4rem;
+  padding:0 1.25rem;
+}
+.skills-table {
+  width:100%;
+  border-collapse:separate;
+  border-spacing:0;
+  background:#fff;
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 6px 18px rgba(0,0,0,.12);
+  font-size:.95rem;
+}
+.skills-table caption {
+  display:none;
+}
+.skills-table .table-title-row th {
+  background:#c9c9c9;
+  color:#0a4e7a;
+  font-size:1.15rem;
+  font-weight:600;
+  text-align:center;
+  padding:1rem 1.2rem;
+  letter-spacing:.5px;
+}
+.skills-table tbody tr:last-child td:first-child { border-bottom-left-radius:24px; }
+.skills-table tbody tr:last-child td:last-child { border-bottom-right-radius:24px; }
+.skills-table th,
+.skills-table td {
+  text-align:center;
+  padding:.95rem 1.2rem;
+}
+.skills-table tbody tr + tr td { border-top:1px solid #eef1f4; }
+.skills-table tbody tr:hover { background:#f7fafc; }
+
+/* ============== PAGE HEADER (mobile styles refined later) ============== */
+.page-header {}
+/* ============== TRIVIA BASE (sin múltiples cortes) ============== */
+.trivia-page .pantalla { display:none; }
+.trivia-page .p1 { display:block; }
+
+/* Mostrar pantallas según respuestas correctas (flujo original) */
+body.trivia-page:has(#a1_2:checked) .p1 { display:none; }
+body.trivia-page:has(#a1_2:checked) .p2 { display:block; }
+body.trivia-page:has(#a2_2:checked) .p2 { display:none; }
+body.trivia-page:has(#a2_2:checked) .p3 { display:block; }
+body.trivia-page:has(#a3_2:checked) .p3 { display:none; }
+body.trivia-page:has(#a3_2:checked) .pfin { display:block; }
+
+/* Grid opciones base 2 cols (fluid) */
+body.trivia-page .pantalla .opciones {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:clamp(.7rem,2.5vw,1rem);
+  max-width:880px;
+  margin:0 auto 1.2rem;
+}
+body.trivia-page .pantalla .opcion,
+body.trivia-page .pantalla .opciones > label,
+body.trivia-page .pantalla .respuesta-img {
+  aspect-ratio:1/1;
+  border:3px solid #d9dfe6;
+  border-radius:18px;
+  overflow:hidden;
+  background:#fff;
+  position:relative;
+  display:block;
+  cursor:pointer;
+  transition:border-color .25s, box-shadow .25s;
+}
+body.trivia-page .pantalla .opcion img,
+body.trivia-page .pantalla .opciones img,
+body.trivia-page .pantalla .respuesta-img img {
+  width:100%; height:100%; object-fit:cover; display:block; border-radius:inherit;
+}
+body.trivia-page .pantalla .opciones > label:hover {
+  border-color:#009fe3;
+  box-shadow:0 0 0 4px rgba(0,159,227,.18);
+}
+
+/* Estados correctos / incorrectos */
+body.trivia-page:has(#a1_1:checked) .p1 label[for="a1_1"],
+body.trivia-page:has(#a1_3:checked) .p1 label[for="a1_3"],
+body.trivia-page:has(#a1_4:checked) .p1 label[for="a1_4"],
+body.trivia-page:has(#a2_1:checked) .p2 label[for="a2_1"],
+body.trivia-page:has(#a2_3:checked) .p2 label[for="a2_3"],
+body.trivia-page:has(#a2_4:checked) .p2 label[for="a2_4"],
+body.trivia-page:has(#a3_1:checked) .p3 label[for="a3_1"],
+body.trivia-page:has(#a3_3:checked) .p3 label[for="a3_3"],
+body.trivia-page:has(#a3_4:checked) .p3 label[for="a3_4"] {
+  border-color:#e63946 !important;
+  box-shadow:0 0 0 4px rgba(230,57,70,.18);
+}
+body.trivia-page:has(#a1_2:checked) .p1 label[for="a1_2"],
+body.trivia-page:has(#a2_2:checked) .p2 label[for="a2_2"],
+body.trivia-page:has(#a3_2:checked) .p3 label[for="a3_2"] {
+  border-color:#2ecc40 !important;
+  box-shadow:0 0 0 4px rgba(46,204,64,.18);
+}
+
+/* Pantalla final */
+body.trivia-page .pantalla.pfin {
+  text-align:center;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+}
+body.trivia-page .pantalla.pfin .resultado-ctn {
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:.2em;
+  padding:1.2rem 1.4rem;
+  max-width:520px;
+}
+body.trivia-page .pfin .respuesta-img.resultado-final {
+  max-width:320px;
+  width:100%;
+  border:3px solid #d9dfe6;
+}
+body.trivia-page .pfin .resultado-final img {
+  width:100%; height:100%; object-fit:cover; border-radius:inherit;
+}
+
+/* Modal error */
+.modal-error {
+  position:fixed;
+  inset:0;
+  background:rgba(15,20,30,.72);
+  backdrop-filter:blur(4px);
+  display:none;
+  z-index:999;
+  padding:1.5rem;
+  align-items:center;
+  justify-content:center;
+}
+.modal-error-box {
+  background:#fff;
+  border-radius:28px;
+  padding:1.4rem 1.6rem 2rem;
+  width:min(420px,100%);
+  text-align:center;
+  box-shadow:0 10px 40px -10px rgba(0,0,0,.35);
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+}
+.modal-error-box h3 { margin:0; font-size:1.35rem; }
+.modal-error-box .respuesta-img {
+  aspect-ratio:1/1;
+  width:100%;
+  max-width:240px;
+  margin:0 auto .6rem;
+  border:3px solid #d9dfe6;
+  border-radius:18px;
+  overflow:hidden;
+  background:#fff;
+}
+.modal-error-box .respuesta-img img { width:100%; height:100%; object-fit:cover; }
+.btn-reintentar {
+  display:inline-block;
+  background:#008cff;
+  color:#fff;
+  font-weight:600;
+  padding:.75rem 1.4rem;
+  border-radius:999px;
+  letter-spacing:.5px;
+  transition:.25s;
+  text-decoration:none;
+}
+.btn-reintentar:hover { background:#0072cc; }
+
+body.trivia-page:has(#a1_1:checked) .modal-error,
+body.trivia-page:has(#a1_3:checked) .modal-error,
+body.trivia-page:has(#a1_4:checked) .modal-error,
+body.trivia-page:has(#a2_1:checked) .modal-error,
+body.trivia-page:has(#a2_3:checked) .modal-error,
+body.trivia-page:has(#a2_4:checked) .modal-error,
+body.trivia-page:has(#a3_1:checked) .modal-error,
+body.trivia-page:has(#a3_3:checked) .modal-error,
+body.trivia-page:has(#a3_4:checked) .modal-error {
+  display:flex;
+  animation:modalFade .35s ease;
+}
+body.trivia-page:has(#a3_2:checked) .modal-error { display:none; }
+@keyframes modalFade {
+  from { opacity:0; transform:translateY(12px); }
+  to { opacity:1; transform:translateY(0); }
+}
+
+/* Feedback correcto (opcional flujo extendido) */
+.feedback-correct {
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.55);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:1500;
+  padding:1.5rem;
+}
+.feedback-box {
+  background:#fff;
+  border:2px solid #2ecc40;
+  border-radius:18px;
+  padding:1.4rem 1.6rem 1.6rem;
+  text-align:center;
+  max-width:320px;
+  width:100%;
+  box-shadow:0 8px 28px -6px rgba(0,0,0,.35);
+}
+.feedback-box p { margin:.4rem 0 1rem; font-weight:600; font-size:1.05rem; color:#1a1f29; }
+.tick {
+  display:inline-flex;
+  width:56px; height:56px;
+  background:#2ecc40;
+  color:#fff;
+  font-size:1.8rem;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  box-shadow:0 0 0 6px #2ecc4044;
+}
+.btn-continuar {
+  display:inline-block;
+  background:#009fe3;
+  color:#fff;
+  padding:.55rem 1.15rem;
+  border-radius:30px;
+  font-weight:600;
+  font-size:.9rem;
+  transition:.25s;
+  text-decoration:none;
+}
+.btn-continuar:hover { background:#007bb8; }
+
+/* Avance condicional (modo radios goX) */
+body.trivia-page .p2,
+body.trivia-page .p3 { display:none; }
+body.trivia-page:has(#go2:checked) .p1 { display:none; }
+body.trivia-page:has(#go2:checked) .p2 { display:block; }
+body.trivia-page:has(#go3:checked) .p2 { display:none; }
+body.trivia-page:has(#go3:checked) .p3 { display:block; }
+body.trivia-page:has(#a3_2:checked) .pfin { display:block; }
+
+.feedback-box.final { max-width:360px; }
+.feedback-box.final .meme-final {
+  display:block;
+  width:100%;
+  max-width:260px;
+  margin:.4rem auto 1rem;
+  border-radius:14px;
+  border:3px solid #2ecc40;
+}
+body.trivia-page .pfin { display:none !important; }
+body.trivia-page:has(#goEnd:checked) .pfin { display:flex !important; flex-direction:column; }
+body.trivia-page:has(#a3_2:checked):has(#goEnd:checked) .pfin { display:flex !important; }
+
+/* ============== MULTIMEDIA (unificado) ============== */
+body.multimedia-page .video-principal,
+body.multimedia-page .galeria-videos-m {
+  background:transparent;
+  border:none;
+  box-shadow:none;
+  border-left:none;
+  width:100%;
+  max-width:100%;
+  padding:0;
+  margin:0;
+}
+body.multimedia-page .video-principal .video-frame {
+  width:100%;
+  aspect-ratio:16/9;
+  margin:0;
+  border-radius:16px;
+  overflow:hidden;
+  background:#000;
+}
+body.multimedia-page .video-principal .principal-video {
+  width:100%; height:100%; object-fit:cover; display:block; margin-top:1em;
+}
+body.multimedia-page .galeria-videos-m {
+  display:grid;
+  justify-content:center;
+  align-items:start;
+  gap:1rem;
+  padding:2rem 2rem 3rem;
+  margin:0 auto;
+  max-width:1400px;
+}
+body.multimedia-page .galeria-videos-m .mini-video {
+  max-width:320px;
+  width:100%;
+  margin:0 auto;
+}
+body.multimedia-page .galeria-videos-m .mini-frame {
+  aspect-ratio:16/9;
+  background:#000;
+  border-radius:8px;
+  overflow:hidden;
+}
+body.multimedia-page .galeria-videos-m video {
+  width:100%; height:100%; object-fit:cover; display:block;
+}
+
+/* Layout playlist adaptable */
+body.multimedia-page .multimedia-contenedor {
+  width:100%;
+  max-width:1400px;
+  margin:0 auto 3rem;
+  padding:1rem 1.2rem 3rem;
+  box-sizing:border-box;
+}
+.multimedia-grid {
+  display:flex;
+  flex-direction:column;
+  gap:1.5rem;
+}
+.multimedia-grid .video-principal { width:100%; margin:0; }
+.multimedia-grid .video-principal .video-frame { aspect-ratio:16/9; width:100%; }
+.playlist-aside {
+  background:transparent;
+  border:none;
+  padding:.25rem 0 0;
+  box-shadow:none;
+}
+.playlist-aside .playlist-title { display:none; }
+.playlist {
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-direction:row;
+  gap:.6rem;
+  flex-wrap:wrap;
+}
+.playlist li { margin:0; }
+.playlist .track {
+  cursor:pointer;
+  border:1px solid #d4dde4;
+  background:#f7fafc;
+  color:#0a4e7a;
+  padding:.55rem .9rem;
+  border-radius:14px;
+  font:500 .85rem/1.2 'Montserrat',sans-serif;
+  letter-spacing:.3px;
+  transition:.25s;
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+  position:relative;
+}
+.playlist .track:hover {
+  background:#009fe3;
+  color:#fff;
+  border-color:#009fe3;
+  box-shadow:0 4px 12px -4px rgba(0,159,227,.35);
+}
+.playlist .track.active {
+  background:#0a4e7a;
+  color:#fff;
+  border-color:#0a4e7a;
+  box-shadow:0 4px 14px -4px rgba(10,78,122,.45);
+}
+.playlist .track.active::before {
+  content:'▶';
+  font-size:.65rem;
+  transform:translateY(-1px);
+}
+.playlist .track:focus-visible { outline:3px solid #009fe3; outline-offset:2px; }
+body.multimedia-page { overflow-x:hidden; }
+
+/* ============== PROYECTOS (grids + imágenes) ============== */
+.contenedor-trabajos {
+  width:100%;
+  max-width:1250px;
+  margin:2.5rem auto 4rem;
+  padding:0 1.25rem;
+  box-sizing:border-box;
+  display:flex;
+  flex-direction:column;
+  gap:3.2rem;
+}
+
+/* Grids fluid (antes 2 / 3 / 4 cols) */
+.quilgym-grid,
+.wine-grid,
+.coldplay-grid,
+.eventify-grid {
+  display:grid;
+  gap:1rem;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  align-items:stretch;
+}
+
+.quilgym-grid figure,
+.wine-grid figure,
+.coldplay-grid figure,
+.eventify-grid figure {
+  margin:0;
+  display:flex;
+  flex-direction:column;
+  gap:.35rem;
+}
+figcaption {
+  font-size:.8rem;
+  line-height:1.3;
+  text-align:center;
+  color:#444;
+}
+
+/* Tarjeta */
+.proyecto-thumb {
+  position:relative;
+  width:100%;
+  aspect-ratio:4/3;
+  overflow:hidden;
+  border-radius:18px;
+  background:#f2f5f7;
+  box-shadow:0 4px 14px -4px rgba(0,0,0,.12);
+  transition:box-shadow .35s, transform .35s;
+}
+.proyecto-thumb::after {
+  content:'';
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(to bottom,rgba(0,0,0,0) 70%,rgba(0,0,0,.08));
+  opacity:0;
+  transition:opacity .35s;
+}
+.proyecto-thumb:hover {
+  box-shadow:0 8px 28px -8px rgba(0,0,0,.25);
+  transform:translateY(-4px);
+}
+.proyecto-thumb:hover::after { opacity:1; }
+.proyecto-img {
+  width:100%; height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .6s ease;
+}
+.proyecto-thumb:hover .proyecto-img { transform:scale(1.08); }
+.proyecto-thumb img[alt*="Logo"] {
+  object-fit:contain;
+  background:#fff;
+  padding:.75rem;
+  transform:none !important;
+}
+
+/* Ítems "full" (en desktop se refuerza con span) */
+.quilgym-full,
+.wine-full,
+.coldplay-full { grid-column:span 2; }
+
+/* Video container */
+.proyecto-video-container {
+  margin:1.75rem auto 0;
+  width:100%;
+  max-width:1000px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:.6rem;
+  background:#fff;
+  padding:1rem 1rem 1.2rem;
+  border-radius:24px;
+  box-shadow:0 4px 18px -4px rgba(0,0,0,.15);
+}
+.proyecto-video {
+  width:100%;
+  max-width:900px;
+  aspect-ratio:16/9;
+  border-radius:18px;
+  overflow:hidden;
+  background:#000;
+  object-fit:cover;
+  display:block;
+}
+.video-caption {
+  font-size:.85rem;
+  color:#555;
+  text-align:center;
+  letter-spacing:.3px;
+}
+
+/* Botones externos proyectos */
+.proyecto-links {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:1rem;
+  flex-wrap:wrap;
+  margin:1.2rem auto 0;
+  padding:.25rem .5rem .5rem;
+}
+.proyecto-links a {
+  position:relative;
+  color:#009fe3;
+  text-decoration:none;
+  font-weight:600;
+  font-size:1rem;
+  letter-spacing:.3px;
+  padding:.55em 1.25em;
+  border-radius:14px;
+  background:#fff;
+  border:1px solid #e0e6eb;
+  box-shadow:0 2px 8px rgba(0,0,0,.05);
+  transition:background .25s,color .25s,box-shadow .25s,transform .25s;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:140px;
+}
+.proyecto-links a:hover,
+.proyecto-links a:focus-visible {
+  background:#009fe3;
+  color:#fff;
+  box-shadow:0 4px 14px -4px rgba(0,159,227,.45);
+  outline:none;
+  transform:translateY(-2px);
+}
+.proyecto-links a:active { transform:translateY(0); box-shadow:0 2px 6px rgba(0,159,227,.35); }
+
+/* ============== UTILIDADES ============== */
+@keyframes popIn {
+  0% { transform:scale(.6) translateY(30px); opacity:0; }
+  60% { transform:scale(1.05) translateY(-4px); opacity:1; }
+  100% { transform:scale(1) translateY(0); opacity:1; }
+}
+
+/* Base de Juegos (queda fuera de media queries) */
+body.juegos-page .juegos-grid {
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: stretch;
+}
+body.juegos-page .juegos-grid > * {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+body.juegos-page .juegos-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+/* =========================================================================================
+   MEDIA QUERY: MOBILE / TABLET (<= 991.98px)
+   Centraliza todos los ajustes que antes estaban en 360 / 420 / 600 / 680 / 700 / 900
+   ========================================================================================= */
+@media (max-width: 991.98px) {
+
+  /* Ocultar columna lateral perfil */
+  .img-aside { display:none; }
+
+  /* Skills: ocultar col 4 en móvil */
+  .skills-table .table-head-row th:nth-child(4),
+  .skills-table tbody td:nth-child(4) { display:none; }
+  .skills-table th,
+  .skills-table td {
+    font-size:.9rem;
+    padding:.8rem .7rem;
+  }
+  .skills-table .table-title-row th { font-size:1.05rem; }
+
+  /* Page header adaptativo */
+  .page-header {
+    padding:1rem 1.2rem;
+    background:var(--c-header,#111);
+    color:#fff;
+  }
+  .page-header .header-top {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:.75rem;
+  }
+  .page-header .site-name { font-size:1.25rem; margin:0; }
+  .page-header .page-title {
+    font-size:1rem;
+    margin:.25rem 0 .75rem;
+    font-weight:500;
+    letter-spacing:.5px;
+  }
+  .page-header .contact-inline {
+    display:flex;
+    gap:1rem;
+    font-size:.75rem;
+  }
+  .page-header .contact-inline a { color:#ddd; }
+  .page-header .menu-btn {
+    width:40px; height:34px;
+    display:grid; place-items:center;
+    cursor:pointer;
+  }
+  .page-header .menu-btn span {
+    width:26px; height:3px;
+    background:#fff;
+    border-radius:2px;
+    display:block;
+    position:relative;
+  }
+  .page-header .menu-btn span:nth-child(2){ transform:translateY(6px); }
+  .page-header .menu-btn span:nth-child(3){ transform:translateY(12px); }
+
+  /* Trivia container spacing */
+  body.trivia-page main.contenedor {
+    width:100%;
+    padding:clamp(.8rem,3vw,1.25rem) clamp(.7rem,3vw,1.25rem) 2rem;
+    margin-top:1.2rem;
+  }
+  #juego-tt {
+    font-size:clamp(1.2rem,5.5vw,1.6rem);
+    line-height:1.2;
+    margin:.2rem 0 1rem;
+    color:#fff;
+    text-align:center;
+  }
+  body.trivia-page .pantalla {
+    width:100%;
+    margin:0 auto clamp(1.2rem,4vw,1.8rem);
+    padding:clamp(1rem,3.5vw,1.5rem) clamp(.8rem,3vw,1.3rem) clamp(1.3rem,4vw,1.9rem);
+    border-radius:26px;
+    box-sizing:border-box;
+  }
+  body.trivia-page .pantalla h3 {
+    font-size:clamp(1.05rem,4.2vw,1.25rem);
+    margin-bottom:.9rem;
+  }
+  .enunciado {
+    font-size:clamp(.85rem,3.5vw,.95rem);
+    margin-bottom:1.1rem;
+  }
+  body.trivia-page .pantalla .opciones {
+    grid-template-columns:repeat(2,1fr);
+  }
+  /* Muy estrechos: 1 columna */
+  body.trivia-page main.contenedor:where(:root) {
+    /* helper */
+  }
+  /* Forzar 1 col si ancho < 400px usando clamp trick */
+  @supports (width: min(100%,100%)) {
+    body.trivia-page .pantalla .opciones {
+      grid-template-columns:repeat(auto-fit,minmax(clamp(140px,48%,100%),1fr));
+    }
+  }
+
+  /* Playlist centrada debajo del video */
+  body.multimedia-page .multimedia-grid {
+    display:grid !important;
+    grid-template-columns:1fr;
+    justify-items:center;
+    gap:1.4rem;
+    width:100%;
+    margin:0 auto;
+  }
+  body.multimedia-page .video-principal {
+    width:100% !important;
+    max-width:520px;
+    margin:0 auto !important;
+  }
+  body.multimedia-page .video-principal .video-frame {
+    max-width:520px;
+    margin:0 auto;
+    border-radius:16px;
+  }
+  body.multimedia-page .playlist-aside {
+    width:100% !important;
+    max-width:520px;
+    margin:0 auto !important;
+    background:#d9dfe6;
+    border:1px solid #d9dfe6;
+    border-radius:16px;
+    padding:.9rem .9rem 1.1rem;
+    box-shadow:0 4px 12px rgba(0,0,0,.06);
+    text-align:center;
+  }
+  body.multimedia-page .playlist {
+    flex-direction:column;
+    width:100%;
+    gap:.55rem;
+    align-items:stretch;
+  }
+  body.multimedia-page .playlist li { width:100%; }
+  body.multimedia-page .playlist .track { width:100%; }
+
+  /* Botones proyectos full width en pantallas muy pequeñas */
+  .proyecto-links { gap:.7rem; }
+  .proyecto-links a {
+    flex:1 1 45%;
+    min-width:140px;
+    font-size:clamp(.85rem,2.8vw,1rem);
+  }
+  /* <420px: uno debajo del otro */
+  .proyecto-links a:nth-last-child(n+2) {}
+
+  /* Contact buttons: mantener grid */
+  .contact-buttons { grid-template-columns:1fr 1fr; }
+  .contact-btn { width:100%; }
+
+  /* Imagen perfil más chica */
+  .profile-image {
+    width:220px;
+    height:220px;
+    border-width:3px;
+  }
+
+  /* Proyectos (mobile): 40% más chicas y centradas */
+  :root {
+    --proy-thumb-mobile-w: 320px;        /* ancho base anterior */
+    --proy-thumb-mobile-scale: 0.6;      /* 60% = -40% */
+  }
+
+  .quilgym-grid,
+  .wine-grid,
+  .coldplay-grid,
+  .eventify-grid {
+    justify-items: center;
+  }
+  .quilgym-grid figure,
+  .wine-grid figure,
+  .coldplay-grid figure,
+  .eventify-grid figure {
+    align-items: center;
+    text-align: center;
+  }
+
+  .proyecto-thumb {
+    /* fallback directo a -40% del set previo (240px/88vw/320px) */
+    width: clamp(144px, 53vw, 192px);
+    /* versión parametrizable (si el navegador soporta calc con var numéricas) */
+    width: clamp(
+      calc(240px * var(--proy-thumb-mobile-scale)),
+      calc(88vw * var(--proy-thumb-mobile-scale)),
+      calc(var(--proy-thumb-mobile-w) * var(--proy-thumb-mobile-scale))
+    );
+    aspect-ratio: 4 / 3;
+    margin-inline: auto;
+  }
+
+  .proyecto-img { width:100%; height:100%; object-fit:cover; }
+  .proyecto-thumb img[alt*="Logo"] { object-fit:contain; background:#fff; padding:10px; }
+
+  .quilgym-full,
+  .wine-full,
+  .coldplay-full { grid-column: auto; }
+}
+
+/* =========================================================================================
+   MEDIA QUERY: DESKTOP (>= 992px)
+   ========================================================================================= */
+@media (min-width: 992px) {
+
+  .main-nav {
+    display:flex;
+    justify-content:center;
+    gap:1rem;
+    margin:1.2rem auto .5rem;
+    background:#fff;
+    border-radius:18px;
+    box-shadow:0 2px 12px rgba(0,0,0,.07);
+    padding:.7rem 2.5rem;
+    max-width:90%;
+    border:1px solid #e0e0e0;
+  }
+  .main-nav a {
+    color:#009fe3;
+    font-weight:600;
+    font-size:1.15rem;
+    padding:.4em 1.2em;
+    border-radius:12px;
+    transition:.2s;
+    position:relative;
+    white-space:nowrap;
+  }
+  .main-nav a:hover,
+  .main-nav a:focus {
+    background:#009fe3;
+    color:#fff;
+    box-shadow:0 2px 8px rgba(0,159,227,.08);
+  }
+  .main-nav a:not(:last-child)::after {
+    content:'';
+    position:absolute;
+    right:-1.2rem;
+    top:50%;
+    transform:translateY(-50%);
+    width:1px; height:1.5em;
+    background:#e0e0e0;
+  }
+  .hamburg-nav { display:none !important; }
+
+  .main-layout {
+    display:flex;
+    width:100%;
+    margin:1em auto;
+    padding:0 2rem;
+    align-items:stretch;
+    min-height:calc(100vh - 200px);
+    box-sizing:border-box;
+  }
+  .contenedor {
+    flex:1;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    gap:1em;
+  }
+  .contenedor-trabajos { display:flex; flex-direction:column; }
+
+  .img-aside {
+    display:flex;
+    flex-direction:column;
+    width:300px;
+    min-width:300px;
+    margin:2em;
+    gap:1em;
+    background:#fff;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,.03);
+    align-self:stretch;
+    padding:1rem;
+  }
+
+  #contacto-form {
+    max-width:70%;
+    margin:0 auto;
+    text-align:left;
+  }
+
+  body.contacto-page .contenedor {
+    min-height:calc(100vh - 260px);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  body.contacto-page section.form {
+    margin:1em auto 0;
+    width:100%;
+    max-width:760px;
+  }
+  body.contacto-page #contacto-form {
+    max-width:540px;
+    width:100%;
+    margin:0 auto;
+  }
+
+  /* Trivia centrado */
+  body.trivia-page main.contenedor {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+  body.trivia-page section.pantalla {
+    width:100%;
+    max-width:1050px;
+    margin:2.2rem auto 2rem;
+    border-left:none;
+  }
+
+  /* Playlist lateral */
+  .multimedia-grid {
+    display:grid;
+    grid-template-columns: minmax(0,1fr) 300px;
+    align-items:start;
+    gap:2rem;
+  }
+  .playlist-aside {
+    background:#fff;
+    border:1px solid #e0e6eb;
+    border-radius:18px;
+    padding:1.1rem 1rem 1.3rem;
+    box-shadow:0 4px 16px -6px rgba(0,0,0,.08);
+    position:sticky;
+    top:110px;
+    max-height:calc(100vh - 140px);
+    overflow:auto;
+  }
+  .playlist-aside .playlist-title {
+    display:block;
+    margin:0 0 .75rem;
+    font-size:1.05rem;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    color:#0a4e7a;
+    font-weight:600;
+  }
+  .playlist { flex-direction:column; flex-wrap:nowrap; }
+  .playlist .track { width:100%; font-size:.8rem; justify-content:space-between; }
+
+  /* Grids proyectos: mayor densidad controlada */
+  .quilgym-grid,
+  .wine-grid,
+  .coldplay-grid,
+  .eventify-grid {
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    max-width:1250px;
+    margin:0 auto;
+  }
+  /* Limitar a 4 cols si se desea (comentado):
+     max-width:calc(4 * 230px + 3 * 1rem); */
+
+  .quilgym-full,
+  .wine-full,
+  .coldplay-full { grid-column:span 2; }
+
+  .proyecto-links a { font-size:1.05rem; min-width:160px; }
+
+  .contact-buttons {
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    gap:1.5rem;
+    align-items:center;
+    margin:1rem auto;
+    max-width:900px;
+  }
+  .contact-btn {
+    width:180px;
+    max-width:180px;
+    font-size:.95rem;
+    padding:.7em 1em;
+  }
+  .cta-quote { font-size:1.4rem; }
+
+  .profile-image { width:200px; height:200px; border-width:3px; }
+
+  /* Proyectos (Desktop): centrar todo el contenido */
+  .contenedor-trabajos {
+    align-items: center;      /* centra el flujo vertical del contenedor */
+    text-align: center;       /* centra textos (títulos/figcaption) */
+  }
+
+  /* Asegurar que cada bloque interno quede centrado */
+  .contenedor-trabajos > * {
+    margin-inline: auto;
+    max-width: 1250px;        /* consistente con los grids */
+    width: 100%;
+  }
+
+  /* Centrado de los grids y de sus ítems */
+  .quilgym-grid,
+  .wine-grid,
+  .coldplay-grid,
+  .eventify-grid {
+    justify-content: center;  /* centra el conjunto de columnas */
+    justify-items: center;    /* centra cada ítem en su celda */
+  }
+  .quilgym-grid figure,
+  .wine-grid figure,
+  .coldplay-grid figure,
+  .eventify-grid figure {
+    align-items: center;      /* centra contenido dentro del figure */
+  }
+
+  /* Elementos sueltos */
+  .proyecto-video-container,
+  .proyecto-links { margin-inline: auto; }
+
+  /* Juego (desktop): título en blanco */
+  body.trivia-page header h1,
+  body.trivia-page #juego-tt {
+    color: #fff !important;
+  }
+}
+
+/* ====== JUEGOS (grid) ====== */
+body.juegos-page .juegos-grid {
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* Mobile: 2 columnas x 2 filas (2x2) */
+@media (max-width: 991.98px) {
+  body.juegos-page .juegos-grid {
+    grid-template-columns: repeat(2, minmax(140px, 1fr));
+    max-width: 560px;              /* centra y limita el ancho */
+  }
+
+  /* Juego (respuestas mobile): 2x2 */
+  body.trivia-page .respuestas-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(.7rem, 2.5vw, 1rem);
+    max-width: 560px;
+    margin: 0 auto 1rem;
+  }
+  body.trivia-page .respuestas-grid .respuesta-img { aspect-ratio: 1 / 1; }
+}
+
+/* Desktop: 4 en una misma fila */
+@media (min-width: 992px) {
+  body.juegos-page .juegos-grid {
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
+    max-width: 1250px;
+  }
+
+  /* Juego (respuestas desktop): 4 en una fila */
+  body.trivia-page .respuestas-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(180px, 1fr));
+    gap: 1rem;
+    max-width: 980px;
+    margin: 0 auto 1rem;
+    justify-items: center;
+  }
+  body.trivia-page .respuestas-grid .respuesta-img { aspect-ratio: 1 / 1; }
+}
+
+/* Carteles "Correcto" (P1/P2) y Felicitaciones final (P3) */
+body.trivia-page:has(#a1_2:checked) .feedback-c1 { display:flex; animation:popIn .3s ease; }
+body.trivia-page:has(#a2_2:checked) .feedback-c2 { display:flex; animation:popIn .3s ease; }
+/* Al avanzar con los radios de avance, ocultar los carteles previos */
+body.trivia-page:has(#go2:checked) .feedback-c1 { display:none; }
+body.trivia-page:has(#go3:checked) .feedback-c2 { display:none; }
+
+/* Última respuesta correcta: mostrar felicitación con imagen */
+body.trivia-page:has(#a3_2:checked) .feedback-c3 { display:flex; animation:popIn .3s ease; }
+

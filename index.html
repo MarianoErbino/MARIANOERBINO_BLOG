@@ -1,66 +1,327 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Linktree personal para redirigirme a mis trabajos y redes sociales">
-  <meta name="theme-color" content="#0f0f12">
-  <title>Mi Linktree</title>
-
-  <!-- Fuente (opcional) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mariano Erbino - Portfolio</title>
+    <link rel="icon" type="image/png" href="img/icono.jpg">
+    <link rel="stylesheet" href="style.css"> 
 </head>
+
 <body>
-  <main class="wrap" role="main">
-    <header>
-      <!-- Cambia la ruta al archivo real dentro de /perfil -->
-      <img class="avatar" src="img/perfil.jfif" alt="Foto de perfil" width="96" height="96">
-      <h1>Mariano Erbino</h1>
-      <p class="subtitle">Bienvenido a mi Linktree</p>
-    </header>
-
-    <nav class="links" aria-label="Enlaces principales">
-      <a class="btn" href="ErbinoIdentikit/index.html" target="_blank" rel="noopener noreferrer">Identikit</a>
-      <a class="btn" href="ErbinoBlog/index.html" target="_blank" rel="noopener noreferrer">Blog</a>
-      <a class="btn" href="#" target="_blank" rel="noopener noreferrer">Trabajo Integrador</a>
-      <a class="btn" href="#" target="_blank" rel="noopener noreferrer">Contacto</a>
+    <!-- ==================== INICIO MENÚ HAMBURGUESA ==================== -->
+    <nav class="hamburg-nav">
+        <button id="hamburg-btn" aria-label="Abrir menú">&#9776;</button>
+        <ul id="hamburg-menu" class="hamburg-menu">
+            <!-- Mismas opciones que Habilidades -->
+            <li><a class="active" href="index.html">Inicio</a></li>
+            <li><a href="Trabajos/Trabajos.html">Proyectos</a></li>
+            <li><a href="Habilidades/Habilidades.html">Habilidades</a></li>
+            <li><a href="Juego/Juego.html">Juego</a></li>
+            <li><a href="Contacto/Contacto.html">Sobre mí</a></li>
+            <li><a href="Multimedia/index.html">Multimedia</a></li>
+        </ul>
     </nav>
+    <!-- ==================== FIN MENÚ HAMBURGUESA ==================== -->
 
-    <div class="socials" aria-label="Redes sociales">
-      <!-- Instagram -->
-      <a class="icon-btn" aria-label="Instagram" href="https://instagram.com/TU_USUARIO" target="_blank" rel="noopener noreferrer">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
-          <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3a6 6 0 1 1 0 12 6 6 0 0 1 0-12zm0 2.2a3.8 3.8 0 1 0 0 7.6 3.8 3.8 0 0 0 0-7.6zM18.5 6.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z"/>
-        </svg>
-      </a>
+    <!-- ==================== INICIO HEADER ==================== -->
+    <header>
+        <h1>Mariano Erbino</h1>
+        <h2>Licenciatura en Negocios Digitales</h2>
+        <h2>Estudiante Avanzado (80%)</h2>
+        <p class="contact-info">
+            <a href="mailto:Erbinomariano@gmail.com">Erbinomariano@gmail.com</a> |
+            <a href="https://www.linkedin.com/in/erbinomariano">LinkedIn</a> |
+            <a href="https://www.google.com/maps/place/Quilmes,+Buenos+Aires" target="_blank">Quilmes, Buenos Aires</a> |
+            <a href="tel:+5491126782031">+54 9 11 2676 2031</a>
+        </p>
+    </header>
+    <!-- ==================== FIN HEADER ==================== -->
 
-      <!-- LinkedIn -->
-      <a class="icon-btn" aria-label="LinkedIn" href="https://www.linkedin.com/in/TU_USUARIO" target="_blank" rel="noopener noreferrer">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
-          <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5S0 4.881 0 3.5 1.11 1 2.5 1s2.48 1.119 2.48 2.5zM0 24h5V7H0v17zM8 24h5v-9c0-2.485 3-2.687 3 0v9h5V13.5c0-6.327-6.037-6.095-8-2.984V7H8v17z"/>
-        </svg>
-      </a>
+    <!-- ==================== INICIO NAV DESKTOP ==================== -->
+    <nav class="main-nav">
+        <!-- Mismas opciones que Habilidades -->
+        <a class="active" href="index.html">Inicio</a>
+        <a href="Trabajos/Trabajos.html">Proyectos</a>
+        <a href="Habilidades/Habilidades.html">Habilidades</a>
+        <a href="Juego/Juego.html">Juego</a>
+        <a href="Contacto/Contacto.html">Sobre mí</a>
+        <a href="Multimedia/index.html">Multimedia</a>
+    </nav>
+    <!-- ==================== FIN NAV DESKTOP ==================== -->
 
-      <!-- WhatsApp (usa tu número sin + ni espacios) -->
-      <a class="icon-btn" aria-label="WhatsApp" href="https://wa.me/549XXXXXXXXXX?text=Hola%20%F0%9F%91%8B%20vengo%20de%20tu%20Linktree" target="_blank" rel="noopener noreferrer">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
-          <path d="M20.52 3.48A11.86 11.86 0 0 0 12.04 0C5.46 0 .12 5.34.12 11.92c0 2.1.55 4.16 1.59 5.98L0 24l6.27-1.64a11.9 11.9 0 0 0 5.77 1.48h.01c6.58 0 11.93-5.34 11.93-11.92a11.86 11.86 0 0 0-3.46-8.44zM12.05 21.3h-.01a9.4 9.4 0 0 1-4.79-1.31l-.34-.2-3.73.98 1-3.63-.22-.35a9.37 9.37 0 0 1-1.45-5.02c0-5.18 4.22-9.39 9.41-9.39a9.3 9.3 0 0 1 6.61 2.73 9.3 9.3 0 0 1 2.74 6.6c0 5.18-4.22 9.39-9.41 9.39zm5.37-7.01c-.3-.15-1.78-.88-2.06-.98-.27-.1-.47-.15-.68.15-.2.3-.78.98-.95 1.18-.17.2-.36.23-.66.08-.3-.15-1.28-.47-2.44-1.5a9.02 9.02 0 0 1-1.67-2.05c-.17-.3-.02-.46.13-.61.13-.13.3-.36.45-.54.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.08-.15-.68-1.63-.93-2.24-.24-.58-.5-.5-.68-.5h-.58c-.2 0-.52.08-.8.38-.27.3-1.05 1.03-1.05 2.5s1.08 2.9 1.23 3.1c.15.2 2.12 3.23 5.14 4.54.72.31 1.28.5 1.72.64.72.23 1.38.2 1.9.12.58-.09 1.78-.73 2.03-1.44.25-.72.25-1.34.17-1.48-.08-.14-.27-.22-.57-.37z"/>
-        </svg>
-      </a>
+    <div class="main-layout">
+        <div class="contenedor">
+        <!-- ==================== INICIO SOBRE MÍ ==================== -->
+        <section class="home-section" id="sobre-mi">
+            <h3>Sobre mí</h3>
+            <p>
+                Estudiante avanzado en la licenciatura en Negocios Digitales, me caracterizo por la curiosidad, la proactividad y el aprendizaje continuo. Disfruto trabajar en equipo, comunicarme de forma asertiva y liderar proyectos colaborativos. <br> <br>Busco aportar valor en entornos dinámicos, adaptándome a los cambios y proponiendo soluciones creativas para la mejora de procesos y resultados. Mi enfoque se centra en la transformación digital, la optimización basada en datos y la implementación de metodologías ágiles para impulsar la innovación y el crecimiento sostenible. <br> <br>Combino pensamiento analítico con visión estratégica, priorizando la experiencia del usuario (UX) y el desarrollo de propuestas de valor que generen impacto real en el ecosistema digital.
+            </p>
+            <button id="btn-leer-mas">Leer más</button>
+            <div id="sobre-mi-mas" style="display:none; margin-top:1em;">
+                <p>
+                    Tengo conocimiento en análisis de datos, business intelligence y automatización. Manejo herramientas como Power BI, Excel, SQL, SAP Fiori, Tableau, Looker Studio, Python y JavaScript. Apasionado por la innovación y la transformación digital.
+                </p>
+            </div>
+        </section>
+        <!-- ==================== FIN SOBRE MÍ ==================== -->
+
+        <!-- ==================== INICIO EXPERIENCIA ==================== -->
+        <section class="home-section">
+            <h3>Experiencia</h3>
+            <ul>
+                <li>
+                    <strong>Pasante Escolar de Técnico Aeronáutico</strong> Fuerza Aérea, Quilmes (2020-2021)
+                    <a href="#" class="ver-mas" data-modal="modal-pasantia">(ver más)</a>
+                </li>
+            </ul>
+        </section>
+        <!-- ==================== FIN EXPERIENCIA ==================== -->
+
+        <!-- ==================== INICIO EDUCACIÓN ==================== -->
+        <section class="home-section">
+            <h3>Educación</h3>
+            <ul>
+                <li>
+                    Licenciatura en Negocios Digitales - UADE (2022 - Actualidad) <br>
+                    <strong>Promedio:</strong> 9.12
+                </li>
+                <li>
+                    Técnico Aeronáutico - Escuela Técnica N° 7 IMPA (2019-2020) <br>
+                    <strong>Promedio:</strong> 9.78
+                </li>
+            </ul>
+        </section>
+        <!-- ==================== FIN EDUCACIÓN ==================== -->
+
+        <!-- ==================== INICIO CERTIFICACIONES Y CURSOS ==================== -->
+        <section class="home-section">
+            <h3>Certificaciones y Cursos</h3>
+            <ul>
+                <li>
+                    Curso de Excel - Udemy
+                    <a href="#" class="ver-mas" data-modal="modal-excel">(ver más)</a>
+                </li>
+                <li>
+                    Curso de Data Analytics - Coderhouse
+                    <a href="#" class="ver-mas" data-modal="modal-data-analytics">(ver más)</a>
+                </li>
+                <li>
+                    Curso de Data Science I - Coderhouse
+                    <a href="#" class="ver-mas" data-modal="modal-data-science1">(ver más)</a>
+                </li>
+                <li>
+                    Curso de Data Science II - Coderhouse
+                    <a href="#" class="ver-mas" data-modal="modal-data-science2">(ver más)</a>
+                </li>
+                <li>
+                    Curso de Data Science III - Coderhouse (En curso)
+                    <a href="#" class="ver-mas" data-modal="modal-data-science3">(ver más)</a>
+                </li>
+                <li>
+                    Bases de Datos Relacionales (SQL) - Coderhouse
+                    <a href="#" class="ver-mas" data-modal="modal-bases-datos">(ver más)</a>
+                </li>
+                <li>
+                    Certificacion en Google Analytics
+                    <a href="#" class="ver-mas" data-modal="modal-ga">(ver más)</a>
+                </li>
+                <li>
+                    Certificacion en Google Ads - Motor de Búsqueda
+                    <a href="#" class="ver-mas" data-modal="modal-ads-search">(ver más)</a>
+                </li>
+                <li>
+                    Certificacion en Meta Ads - Display
+                    <a href="#" class="ver-mas" data-modal="modal-ads-display">(ver más)</a>
+                </li>
+                <li>
+                    Certificacion en Inbound Marketing
+                    <a href="#" class="ver-mas" data-modal="modal-inbound">(ver más)</a>
+                </li>
+                <li>
+                    First Certificate in English (Cambridge)
+                    <a href="#" class="ver-mas" data-modal="modal-fce">(ver más)</a>
+                </li>
+            </ul>
+        </section>
+        <!-- ==================== FIN CERTIFICACIONES Y CURSOS ==================== -->
+
+        <!-- ==================== INICIO MODALS CERTIFICACIONES ==================== -->
+        <div id="modal-ga" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <img src="img/logo_google.png" alt="Google Logo" class="modal-logo">
+                <h4>Google Analytics</h4>
+                <p>Certificación oficial de Google sobre análisis de datos web, interpretación de métricas y optimización de sitios.</p>
+            </div>
+        </div>
+        <div id="modal-ads-search" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <img src="img/logo_google.png" alt="Google Logo" class="modal-logo">
+                <h4>Google Ads - Motor de Búsqueda</h4>
+                <p>Certificación oficial de Google sobre la creación, gestión y optimización de campañas publicitarias en la red de búsqueda de Google.</p>
+            </div>
+        </div>
+        <div id="modal-ads-display" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <img src="img/meta_logo.png" alt="Meta Logo" class="modal-logo">
+                <h4>Meta Ads - Display </h4>
+                <p>Certificación sobre la gestión de campañas de anuncios gráficos en la red de display de Google y plataformas Meta, enfocada en segmentación y optimización visual.</p>
+            </div>
+        </div>
+        <div id="modal-fce" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <img src="img/logo_first.webp" alt="Cambridge Logo" class="modal-logo">
+                <h4>First Certificate in English (FCE)</h4>
+                <p>Certificación internacional de inglés nivel B2, otorgada por Cambridge, que avala competencias avanzadas en el idioma.</p>
+            </div>
+        </div>
+        <!-- ==================== FIN MODALS CERTIFICACIONES ==================== -->
+
+        <!-- ==================== INICIO MODAL EXPERIENCIA ==================== -->
+        <div id="modal-pasantia" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <img src="img/impa_logo.png" alt="Fuerza Aérea Argentina Logo" class="modal-logo">
+                <h4>Pasante Escolar de Técnico Aeronáutico</h4>
+                <p>Pasantía realizada en la Fuerza Aérea Argentina, participando en tareas de mantenimiento, control de calidad y desarrollo de soluciones mecánicas para aeronaves.</p>
+            </div>
+        </div>
+        <!-- ==================== FIN MODAL EXPERIENCIA ==================== -->
+
+        <!-- ==================== INICIO MODALS EDUCACIÓN ==================== -->
+        <div id="modal-excel" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <img src="img/logo_udemy.png" alt="Udemy Logo" class="modal-logo">
+                <h4>Curso de Excel - Udemy</h4>
+                <p>Curso práctico de Excel orientado a la gestión y análisis de datos, automatización de tareas y creación de reportes profesionales.</p>
+            </div>
+        </div>
+        <div id="modal-data-analytics" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <img src="img/logo_coderhouse.png" alt="Coderhouse Logo" class="modal-logo">
+                <h4>Curso de Data Analytics - Coderhouse</h4>
+                <p>
+                    <strong>Duración:</strong> 10 semanas<br>
+                    <strong>Dificultad:</strong> Principiante<br>
+                    Aprenderás conceptos generales de bases de datos y trabajarás sobre bases de datos relacionales con SQL. Diseñarás y desarrollarás tableros de control en Power BI usando DAX, Lenguaje M y Power Query. Al finalizar, podrás desarrollar proyectos de data analytics desde el relevamiento hasta la creación de tableros.<br>
+                    <strong>Unidades:</strong> Introducción al análisis de datos, Modelos y diseño de bases de datos, SQL, Power BI, Gráficos y segmentaciones, Medidas de tendencia central, entre otros.
+                </p>
+            </div>
+        </div>
+        <div id="modal-data-science1" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <img src="img/logo_coderhouse.png" alt="Coderhouse Logo" class="modal-logo">
+                <h4>Curso de Data Science I - Coderhouse</h4>
+                <p>
+                    Fundamentos de visualización, encuadre de problemáticas de negocio, selección de algoritmos y métricas, conclusiones y storytelling con datos.<br>
+                    <strong>Unidades:</strong> Transformación digital, Python, NumPy, Pandas, Visualizaciones, Estadística, Aprendizaje supervisado y no supervisado, Fundamentos de IA y ML.
+                </p>
+            </div>
+        </div>
+        <div id="modal-data-science2" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <img src="img/logo_coderhouse.png" alt="Coderhouse Logo" class="modal-logo">
+                <h4>Curso de Data Science II - Coderhouse</h4>
+                <p>
+                    Investigación y prototipado de aplicaciones o sitios web, mobile first, definición de MVP, público objetivo, herramientas de prototipado, metodologías ágiles y diseño.<br>
+                    <strong>Unidades:</strong> Prototipado, HTML, Notion AI, Excel, IA para contenido visual, traducción automática, asistentes virtuales.
+                </p>
+            </div>
+        </div>
+        <div id="modal-data-science3" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <img src="img/logo_coderhouse.png" alt="Coderhouse Logo" class="modal-logo">
+                <h4>Curso de Data Science III - Coderhouse</h4>
+                <p>
+                    Procesamiento de lenguaje natural (NLP), procesamiento de imagen y audio con redes neuronales.<br>
+                    <strong>Unidades:</strong> Data Science no tabular, NLP I y II, Taller NLP.
+                </p>
+            </div>
+        </div>
+        <div id="modal-bases-datos" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <img src="img/logo_coderhouse.png" alt="Coderhouse Logo" class="modal-logo">
+                <h4>Bases de Datos Relacionales - Coderhouse</h4>
+                <p>
+                    Curso orientado a la comprensión, diseño y consulta de bases de datos relacionales utilizando SQL. Incluye modelado, manipulación de datos y consultas avanzadas.
+                </p>
+            </div>
+        </div>
+
+        <div id="modal-inbound" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <img src="img/hubspot_logo.png" alt="Inbound Marketing Logo" class="modal-logo">
+                <h4>Certificación Inbound Marketing</h4>
+                <p>
+                    Certificación en estrategias de Inbound Marketing: atracción de clientes, generación de leads, automatización de marketing y optimización de conversiones mediante contenidos digitales y herramientas de automatización.
+                </p>
+            </div>
+        </div>
+        <!-- ==================== FIN MODALS EDUCACIÓN ==================== -->
+
+        <!-- ==================== INICIO IDIOMAS ==================== -->
+        <section class="home-section">
+            <h3>Idiomas</h3>
+            <ul>
+                <li>Español: Nativo</li>
+                <li>Inglés: Avanzado (FCE - B2)</li>
+                <li>Alemán: Básico</li>
+                <li>Portugués: Aprendiendo</li>
+            </ul>
+        </section>
+                <!-- ==================== FIN IDIOMAS ==================== -->
+               <!-- ==================== INICIO HOBBIES ==================== -->
+        <section class="home-section">
+            <h3>Hobbies</h3>
+            <ul>
+                <li>Entrenamiento en el gimnasio y vida fitness</li>
+                <li>Aprendizaje continuo sobre Inteligencia Artificial y Machine learning</li>
+                <li>Lectura de libros sobre ciencia y desarrollo personal</li>
+                <li>Pasar tiempo de calidad con mi perra Umma</li>
+            </ul>
+        </section>
+        <!-- ==================== FIN HOBBIES ==================== -->
+        </div>
+
+
+        <aside class="img-aside">
+            <img src="img/Perfil.png" alt="Mariano Erbino" class="profile-img">
+            <p>¡Hola! Soy Mariano Erbino, egresado como Técnico Aeronáutico de la Escuela Técnica N° 7 IMPA. Mi formación técnica me brindó una base sólida en mecánica y precisión, valores que aplico ahora en el mundo de los negocios digitales y la tecnología.</p>
+            <img src="img/data.jpg" alt="Imagen de datos y metricas" class="profile-img">
+            <p>Los datos me fascinan porque transforman incertidumbre en claridad. Cada dataset cuenta una historia única y me permite descubrir patrones ocultos que impulsan decisiones estratégicas. Es increíble cómo los números pueden revelar oportunidades de negocio y optimizar procesos de manera tan precisa.</p>
+            <img src="img/libro.webp" alt="Foto de la portada del libro - Pensar rapido, pensar despacio" class="profile-img">
+            <p>"Pensar Rápido, Pensar Despacio" de Daniel Kahneman es mi libro favorito porque revolucionó mi forma de entender la toma de decisiones. Me fascina cómo explica los dos sistemas de pensamiento y cómo los sesgos cognitivos influyen en nuestras decisiones diarias, especialmente en el ámbito empresarial y del análisis de datos.</p>
+        </aside>
     </div>
-
+    <!-- ==================== INICIO FOOTER / CONTACTO ==================== -->
     <footer>
-      <small>© <span id="year"></span> Tu Nombre</small>
+        <h3>Contacto</h3>
+        <p>¿Te gustaría contactarme? <br>
+        <a href="mailto:Erbinomariano@gmail.com">Envíame un email</a></p>
+        <nav class="links-nav">
+            <!-- Mismas opciones que Habilidades -->
+            <a class="active" href="index.html">Inicio</a> |
+            <a href="Trabajos/Trabajos.html">Proyectos</a> |
+            <a href="Contacto/Contacto.html">Sobre mi</a> |
+            <a href="Habilidades/Habilidades.html">Habilidades</a> |
+            <a href="Juego/Juego.html">Juego</a> |
+            <a href="Multimedia/Multimedia.html">Multimedia</a>
+        </nav>
     </footer>
-  </main>
-
-  <script>
-    // Año del footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+    <!-- ==================== FIN FOOTER / CONTACTO ==================== -->
+    
+    <script src="js/home.js"></script>
 </body>
 </html>
