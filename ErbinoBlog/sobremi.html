@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informacion</title>
+        <!-- favicon / logo en la pestaña -->
+    <link rel="icon" type="image/png" href="img/LOGOPESTAÑA.png">
+    <link rel="apple-touch-icon" href="img/LOGOPESTAÑA.png">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Centrar las opciones del menú usando flexbox */
+        nav.aurora-menu {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            /* centra el contenedor del menú */
+            background: transparent;
+            padding: 0.6rem 0;
+            box-sizing: border-box;
+        }
+
+        nav.aurora-menu #menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 2.5rem;
+            /* separacion entre items */
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav.aurora-menu #menu li {
+            display: inline-block;
+        }
+
+        nav.aurora-menu #menu li a {
+            display: inline-block;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            padding: 0.25rem 0.5rem;
+        }
+
+        /* Ajustes responsive mínimos */
+        @media (max-width: 600px) {
+            nav.aurora-menu #menu {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="top">
+            <marquee><a href="subscribe.html">Suscríbete</a> para recibir un e-book de programación gratis →</marquee>
+        </div>
+        <!-- imagen del header eliminada -->
+    </header>
+    <nav class="nav aurora-menu">
+        <!-- botón hamburguesa (visible en mobile) -->
+        <button class="menu-toggle" aria-controls="menu" aria-expanded="false" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul id="menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="ArticulosHome.html">Artículos</a></li>
+            <li><a href="sobremi.html">E-COMMERCE</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+     </nav>
+
+    <main>
+                <!-- COMIENZO DEL ARTÍCULO -->
+            <div class="contenido" style="background-color: #03363a;">
+                <div class="articulo">
+                    <h1>PAGINA WEB</h1>
+                    <img src="img/WEB.png" alt="Portada" class="sobremi">
+                    <p class="bajada">En QuilGym estamos construyendo un ecommerce simple, confiable y pensado para personas reales: catálogo claro, guías útiles y asesoría honesta para que elijas solo lo que suma. Combinamos datos (stock y precios actualizados), diseño centrado en el usuario y una ejecución prolija: compra en pocos pasos, medios de pago seguros, retiro coordinado en Quilmes y envíos a todo el país. Nuestro objetivo es transformar interés en resultados medibles: mejores elecciones, mejores hábitos y una experiencia de compra que te acompañe en cada etapa de tu entrenamiento.</p>
+                    <div class="imagen-texto">
+                    <img src="img/WEB2.png" alt="Portada" class="sobremi">
+                    </div>
+                    <div class="texto">
+                        <p class="bajada">En QuilGym encontrás todo para tu entrenamiento en un solo lugar: <strong>proteínas</strong>, <strong>creatinas</strong>, <strong>pre-entrenos y aminoácidos</strong>, <strong>ZMA/cafeína/magnesio</strong>, <strong>ganadores de masa</strong>, <strong>pancakes y barritas proteicas</strong>, y <strong>shakers</strong>. También armamos <strong>combos</strong> listos para tus objetivos (fuerza, recomposición o rendimiento) con asesoría honesta y stock actualizado 💯💪🏽. Comprá en pocos pasos, pagá seguro y recibí donde estés: <strong>envíos a todo el país</strong> y retiro coordinado en Quilmes 📦🚚⭐️</p>
+                    </div>
+                </div>      
+            </div>
+  </main>
+        
+    </div>
+    <footer>
+      <ul id="menu-footer">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="ArticulosHome.html">Artículos</a></li>
+          <li><a href="sobremi.html">E-COMMERCE</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+      <address>
+          Celular: <a href="#">1126762031</a>
+          Linkedin: <a href="https://www.linkedin.com/in/mariano-erbino">Mariano Erbino</a>
+          Mail: <a href="mailto:Marianoerbino@gmail.com">Marianoerbino@gmail.com</a>
+      </address>
+      <p>&copy; 2025 Mariano Erbino</p>
+  </footer>
+
+  <!-- Script para abrir/cerrar el menú hamburguesa (mismo que en index.html) -->
+  <script>
+    (function(){
+      const nav = document.querySelector('.aurora-menu');
+      if (!nav) return;
+      const toggle = nav.querySelector('.menu-toggle');
+      const menu = nav.querySelector('#menu');
+      if (!toggle || !menu) return;
+
+      function setExpanded(val){
+        toggle.setAttribute('aria-expanded', String(val));
+        nav.classList.toggle('is-open', val);
+        document.body.classList.toggle('menu-open', val);
+      }
+
+      toggle.addEventListener('click', function(){
+        const opened = nav.classList.contains('is-open');
+        setExpanded(!opened);
+      });
+
+      // cerrar menú al hacer click en un enlace (mobile)
+      menu.addEventListener('click', function(e){
+        if (e.target.tagName === 'A') setExpanded(false);
+      });
+
+      // cerrar con Escape
+      document.addEventListener('keydown', function(e){
+        if (e.key === 'Escape') setExpanded(false);
+      });
+    })();
+  </script>
+
+</body>
+
+</html>

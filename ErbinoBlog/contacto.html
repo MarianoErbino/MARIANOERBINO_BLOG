@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto</title>
+  <link rel="icon" type="image/png" href="img/LOGOPESTAÑA.png">
+  <link rel="apple-touch-icon" href="img/LOGOPESTAÑA.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ====== NAVBAR ====== -->
+  <header>
+        <div class="top">
+            <marquee><a href="subscribe.html">Suscríbete</a> para recibir un e-book de programación gratis →</marquee>
+        </div>
+    
+    </header>
+    <nav class="nav aurora-menu">
+        <!-- botón hamburguesa (visible en mobile) -->
+        <button class="menu-toggle" aria-controls="menu" aria-expanded="false" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul id="menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="ArticulosHome.html">Artículos</a></li>
+            <li><a href="sobremi.html">E-COMMERCE</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+  <!-- ====== SECCIÓN DE CONTACTO ====== -->
+    <main class="contact">
+        <section class="contacto">
+            <div class="contacto__info">
+            <h1>CHARLEMOS</h1>
+            <p>Si querés colaborar, conocer más sobre mis proyectos o simplemente conectar, completá el formulario o escribime directamente a mis redes.</p>
+
+            <div class="contacto__datos">
+                <p><strong>Teléfono:</strong> 1126762031</p>
+                <p><strong>Email:</strong> erbinomariano@gmail.com</p>
+                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mariano-erbino" target="_blank">/mariano-erbino</a></p>
+            </div>
+            </div>
+    
+
+            <!-- FORMULARIO -->
+            <form class="contacto__form">
+            <label>Nombre</label>
+            <input type="text" placeholder="Tu nombre" required>
+
+            <label>Email</label>
+            <input type="email" placeholder="tuemail@ejemplo.com" required>
+
+            <label>Mensaje</label>
+            <textarea rows="5" placeholder="Escribí tu mensaje..." required></textarea>
+
+            <!-- NUEVOS CAMPOS SOLICITADOS -->
+            <label for="suplemento">¿Qué suplemento te interesa?</label>
+            <select id="suplemento" name="suplemento" required>
+              <option value="" disabled selected>Seleccione uno</option>
+              <option value="creatina">Creatina</option>
+              <option value="proteina">Proteína</option>
+              <option value="multivitaminico">Multivitamínico</option>
+              <option value="preentreno">Pre-entreno</option>
+              <option value="otro">Otro</option>
+            </select>
+
+            <fieldset>
+              <legend>Frecuencia de entrenamiento</legend>
+
+              <label class="radio-row">
+                <span>Entreno mucho</span>
+                <input type="radio" name="entreno" value="mucho" required>
+              </label>
+
+              <label class="radio-row">
+                <span>Entreno promedio</span>
+                <input type="radio" name="entreno" value="promedio">
+              </label>
+
+              <label class="radio-row">
+                <span>No entreno</span>
+                <input type="radio" name="entreno" value="no">
+              </label>
+            </fieldset>
+
+            <label for="objetivo">¿Cuál es su objetivo?</label>
+            <textarea id="objetivo" name="objetivo" rows="3" placeholder="Ej.: ganar masa muscular, perder grasa, mejorar rendimiento..." required></textarea>
+
+            <button type="submit">Enviar mensaje</button>
+            </form>
+        </section>
+    </main>
+
+  <footer>
+    <ul id="menu-footer">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="ArticulosHome.html">Artículos</a></li>
+        <li><a href="sobremi.html">E-COMMERCE</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+    <address>
+        Celular: <a href="#">1126762031</a>
+        Linkedin: <a href="www.linkedin.com/in/Marianoerbino">Mariano Erbino</a>
+        Mail: <a href="mailto:Marianoerbino@gmail.com">Marianoerbino@gmail.com</a>
+    </address>
+    <p>&copy; 2025 Mariano Erbino</p>
+</footer>
+
+  <!-- Script para abrir/cerrar el menú hamburguesa -->
+  <script>
+    (function(){
+      const nav = document.querySelector('.aurora-menu');
+      if (!nav) return;
+      const toggle = nav.querySelector('.menu-toggle');
+      const menu = nav.querySelector('#menu');
+      if (!toggle || !menu) return;
+
+      function setExpanded(val){
+        toggle.setAttribute('aria-expanded', String(val));
+        nav.classList.toggle('is-open', val);
+        document.body.classList.toggle('menu-open', val);
+      }
+
+      toggle.addEventListener('click', function(){
+        const opened = nav.classList.contains('is-open');
+        setExpanded(!opened);
+      });
+
+      menu.addEventListener('click', function(e){
+        if (e.target.tagName === 'A') setExpanded(false);
+      });
+
+      document.addEventListener('keydown', function(e){
+        if (e.key === 'Escape') setExpanded(false);
+      });
+    })();
+  </script>
+
+</body>
+</html>

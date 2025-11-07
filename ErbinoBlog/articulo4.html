@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articulo 4</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- favicon / logo en la pestaña -->
+    <link rel="icon" type="image/png" href="img/LOGOPESTAÑA.png">
+    <link rel="apple-touch-icon" href="img/LOGOPESTAÑA.png">
+</head>
+
+<body>
+
+  <header>
+    <div class="top">
+        <marquee><a href="subscribe.html">Suscríbete</a> para recibir un e-book de programación gratis →</marquee>
+    </div>
+
+</header>
+<nav class="nav aurora-menu">
+    <!-- botón hamburguesa (visible en mobile) -->
+    <button id="menuBtn" class="menu-toggle" aria-controls="menu" aria-expanded="false" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <ul id="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="ArticulosHome.html">Artículos</a></li>
+        <li><a href="sobremi.html">e-commerce</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+ </nav>
+
+  <main>
+
+    <div class="principal">
+            <!-- COMIENZO DEL ARTÍCULO -->
+        <div class="contenido" style="background-color: #03363a;">
+            <div class="articulo">
+                <h1>Más fuerte, más vida: la ciencia detrás del entrenamiento de fuerza</h1>
+                <p class="fecha">Publicado por <a href="autores.html">Erbino Mariano</a> el <a href="calendario.html"> 20 de Octubre de 2024.</a></p>
+                <img src="img/ENTRENAR.jpg" alt="Portada" class="portada">
+                <p class="bajada">Empezá simple y sostenido: 4–6 básicos, progresá una sola variable por vez y registrá todo. Dejá 1–3 reps en reserva, dormí 7–9 h y evaluá cada 4 semanas. Para mayores o retorno, cargas moderadas y técnica impecable: consistencia > intensidad.</p>
+                <div class="imagen-texto">
+                <img src="img/EJERCICIO.webp" alt="Portada" class="post-img">
+                </div>
+                <div class="texto">
+                    <p class="bajada">Más fuerte, más vida: entrenar fuerza no es solo “levantar más”, es invertir en salud. La evidencia muestra que aumentar la masa y la función muscular mejora la composición corporal, eleva el gasto energético, protege huesos y articulaciones, y reduce el riesgo cardiometabólico. También impacta en la cabeza: mejor ánimo, sueño y autoeficacia. En cualquier edad, ganar fuerza es ganar autonomía.</p>
+                    <p class="bajada">La base científica es simple y potente: sobrecarga progresiva (subir gradualmente la dificultad), técnica sólida, y una dosis bien medida de volumen, intensidad y frecuencia. Pensalo como un triángulo: estímulo (series x repeticiones x carga), recuperación (sueño, manejo del estrés) y nutrición (proteína suficiente, hidratación; creatina suma en alta intensidad). Si el triángulo está equilibrado, el cuerpo se adapta: más fuerza, más potencia, más resiliencia.</p>
+                    <p class="bajada">¿Cómo se aplica? Movimientos compuestos (sentadilla, empuje, tracción, bisagra de cadera), 2–4 sesiones semanales, progresiones claras y registros del entrenamiento. Empezá con rangos de 6–12 repeticiones para hipertrofia, alterná fases de fuerza (3–6 reps) y usa deloads cuando haga falta. Sumá calentamiento específico, trabajo de core y movilidad para prevenir lesiones. Con constancia y criterios simples, la ciencia del entrenamiento de fuerza se traduce en lo que importa: más rendimiento hoy y mejor calidad de vida mañana.</p>
+        
+                  </div>
+            <hr>
+            </div>
+            <!-- FIN DEL ARTÍCULO -->
+                        
+        </div>
+        
+  </main>
+    <footer>
+      <ul id="menu-footer">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="ArticulosHome.html">Artículos</a></li>
+          <li><a href="sobremi.html">Sobre mí</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+      <address>
+          Celular: <a href="#">1126762031</a>
+          Linkedin: <a href="https://www.linkedin.com/in/Marianoerbino">Mariano Erbino</a>
+          Mail: <a href="mailto:Marianoerbino@gmail.com">Marianoerbino@gmail.com</a>
+      </address>
+      <p>&copy; 2025 Erbino Mariano</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const menuBtn = document.getElementById('menuBtn');
+    const menu = document.getElementById('menu');
+    const nav = document.querySelector('.aurora-menu');
+
+    function setExpanded(value) {
+        if (menuBtn) menuBtn.setAttribute('aria-expanded', String(value));
+    }
+
+    function toggleMenu() {
+        if (!nav || !menu) return;
+        // Alternar en ambos selectores para compatibilidad con distintos estilos CSS
+        nav.classList.toggle('is-open');
+        menu.classList.toggle('open');
+
+        const isNowOpen = nav.classList.contains('is-open') || menu.classList.contains('open');
+        setExpanded(isNowOpen);
+    }
+
+    if (menuBtn) menuBtn.addEventListener('click', toggleMenu);
+
+    // Cerrar el menú en mobile al pulsar un enlace
+    if (menu) {
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 768 && nav && menu) {
+                    nav.classList.remove('is-open');
+                    menu.classList.remove('open');
+                    setExpanded(false);
+                }
+            });
+        });
+    }
+});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articulo 2</title>
+    <link rel="icon" type="image/png" href="img/LOGOPESTAÑA.png">
+    <link rel="apple-touch-icon" href="img/LOGOPESTAÑA.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="top">
+        <marquee><a href="subscribe.html">Suscríbete</a> para recibir un e-book de programación gratis →</marquee>
+    </div>
+
+</header>
+<nav class="nav aurora-menu">
+    <!-- botón hamburguesa (visible en mobile) -->
+    <button id="menuBtn" class="menu-toggle" aria-controls="menu" aria-expanded="false" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <ul id="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="ArticulosHome.html">Artículos</a></li>
+        <li><a href="sobremi.html">Sobre mí</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+ </nav>
+
+  <main>
+
+    <div class="principal">
+            <!-- COMIENZO DEL ARTÍCULO -->
+        <div class="contenido" style="background-color: #03363a;">
+            <div class="articulo">
+                <h1>Combinar o no combinar: curiosidades al mezclar creatina y BCAA</h1>
+                <p class="fecha">Publicado por <a href="autores.html">Erbino Mariano</a> el <a href="calendario.html"> 20 de Octubre de 2024.</a></p>
+                <img src="img/BCAA.jpg" alt="Portada" class="portada">
+                <p class="bajada">Los BCAA (leucina, isoleucina y valina) son el aliado simple para entrenar mejor y recuperarte más rápido. Ayudan a reducir la fatiga en sesiones largas, protegen masa muscular en déficit calórico y suavizan el dolor post-entreno, por eso funcionan muy bien intra o post cuando el desgaste es alto. Si buscás sostener el rendimiento sin caer en el “me rompo y no rindo”, sumarlos en los días duros marca la diferencia.</p> <p class="bajada">La creatina monohidrato es el estándar de oro del rendimiento: aumenta fuerza y potencia, te permite hacer más repeticiones de calidad y mejora la recuperación entre series. Es segura, económica y efectiva cuando se toma todos los días (3–5 g), preferentemente con alguna comida para no olvidarla. Si tu objetivo es progresar de forma constante, la creatina es el suplemento más directo para ver resultados reales</p>
+                <div class="imagen-texto">
+                <img src="img/CREATINA2.jpg" alt="Portada" class="post-img">
+                </div>
+                <div class="texto">
+                    <p class="bajada">Los BCAA (leucina, isoleucina y valina) y la creatina cumplen roles distintos y complementarios. Los BCAA aportan aminoácidos esenciales involucrados en la síntesis proteica y pueden ayudar a reducir la fatiga percibida y el daño muscular, sobre todo cuando el aporte total de proteína es bajo, hay entrenamientos en ayunas o periodos de déficit calórico. La leucina es clave para activar la vía mTOR (encendido anabólico), pero su efecto depende del resto de aminoácidos esenciales disponibles.</p>
+                    <p class="bajada">La creatina monohidrato tiene uno de los respaldos científicos más sólidos en rendimiento: aumenta las reservas de fosfocreatina y acelera la resíntesis de ATP, mejorando fuerza, potencia y capacidad de repetir esfuerzos de alta intensidad. Suele recomendarse 3–5 g/día (la fase de carga es opcional) y puede producir un leve aumento de peso por mayor agua intracelular, algo esperable y no perjudicial. Funciona para fuerza/hipertrofia, sprints y deportes intermitentes, y también muestra beneficios en recuperación y, en algunos casos, en función cognitiva bajo fatiga.</p>
+                    <p class="bajada">¿Cómo elegir? Si tu proteína diaria ya es suficiente (≈1.6–2.2 g/kg), los BCAA aportan menos valor que una proteína completa (suero, caseína, vegetal blend); aun así, pueden ser útiles en entrenos en ayunas o cuando la digestión de proteína completa no es viable. La creatina, en cambio, ofrece mejoras consistentes para la mayoría de atletas y personas activas, con buena seguridad y costo-beneficio. Combine de forma inteligente: priorizá cumplir proteína total y creatina diaria; reservá BCAA para contextos específicos. Y siempre considerá calidad del producto, hidratación y posibles contraindicaciones individuales.</p>
+        
+                  </div>
+            <hr>
+            </div>
+            <!-- FIN DEL ARTÍCULO -->
+                        
+        </div>
+    
+  </main>
+    <footer>
+      <ul id="menu-footer">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="ArticulosHome.html">Artículos</a></li>
+          <li><a href="sobremi.html">e-commerce</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+      <address>
+          Celular: <a href="#">1126762031</a>
+          Linkedin: <a href="https://www.linkedin.com/in/Marianoerbino">Mariano Erbino</a>
+          Mail: <a href="mailto:Marianoerbino@gmail.com">Marianoerbino@gmail.com</a>
+      </address>
+      <p>&copy; 2025 Erbino Mariano</p>
+  </footer>
+
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const menuBtn = document.getElementById('menuBtn');
+    const menu = document.getElementById('menu');
+    const nav = document.querySelector('.aurora-menu');
+
+    function setExpanded(value) {
+        if (menuBtn) menuBtn.setAttribute('aria-expanded', String(value));
+    }
+
+    function toggleMenu() {
+        if (!nav || !menu) return;
+        // Alternar en ambos lugares por compatibilidad con distintos CSS
+        nav.classList.toggle('is-open');
+        menu.classList.toggle('open');
+
+        const isNowOpen = nav.classList.contains('is-open') || menu.classList.contains('open');
+        setExpanded(isNowOpen);
+    }
+
+    if (menuBtn) menuBtn.addEventListener('click', toggleMenu);
+
+    // Cerrar el menú en mobile al pulsar un enlace
+    if (menu) {
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 768) {
+                    nav.classList.remove('is-open');
+                    menu.classList.remove('open');
+                    setExpanded(false);
+                }
+            });
+        });
+    }
+});
+</script>
+
+</body>
+
+</html>

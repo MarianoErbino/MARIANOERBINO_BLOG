@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articulo 3</title>
+    <link rel="icon" type="image/png" href="img/LOGOPESTAÑA.png">
+    <link rel="apple-touch-icon" href="img/LOGOPESTAÑA.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="top">
+        <marquee><a href="subscribe.html">Suscríbete</a> para recibir un e-book de programación gratis →</marquee>
+    </div>
+
+</header>
+<nav class="nav aurora-menu">
+    <!-- botón hamburguesa (visible en mobile) -->
+    <button id="menuBtn" class="menu-toggle" aria-controls="menu" aria-expanded="false" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <ul id="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="ArticulosHome.html">Artículos</a></li>
+        <li><a href="sobremi.html">Sobre mí</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+ </nav>
+
+  <main>
+
+    <div class="principal">
+            <!-- COMIENZO DEL ARTÍCULO -->
+        <div class="contenido" style="background-color: #03363a;">
+            <div class="articulo">
+                <h1>Proteína después de los 50: la clave para fuerza y autonomía</h1>
+                <p class="fecha">Publicado por <a href="autores.html">Erbino Mariano</a> el <a href="calendario.html"> 20 de Octubre de 2024.</a></p>
+                <img src="img/PROTE.webp" alt="Portada" class="portada">
+                <p class="bajada">En pocas palabras, la importancia de la proteína radica en su capacidad para estimular la síntesis y reparación muscular, preservar y aumentar la masa magra, y mejorar saciedad y recuperación, ofreciendo una ventaja real en rendimiento y composición corporal dentro de un plan de entrenamiento y alimentación bien diseñado.</p>
+                <div class="imagen-texto">
+                <img src="img/COMIDA.jpg" alt="Portada" class="post-img">
+                </div>
+                <div class="texto">
+                    <p class="bajada">La proteína no se limita al gimnasio: es el sustrato central para reparar y construir tejido, sostener el rendimiento, mejorar la recuperación, cuidar la salud metabólica y aumentar la saciedad. Bien elegida y distribuida en el día, ayuda a cubrir requerimientos y a potenciar resultados en distintos objetivos y estilos de vida: fuerza, recomposición corporal, control del apetito y bienestar general.</p>
+                    <p class="bajada">La clave es el criterio: calidad, dosis y reparto por comida. Priorizar fuentes completas (huevo, lácteos, carnes, suero) o combinaciones vegetales que aporten todos los aminoácidos esenciales; apuntar a una ingesta diaria suficiente y a 2–4 “pulsos” de proteína con buen umbral de leucina (≈20–40 g por comida, según contexto). Menos promesas y “polvos mágicos”; más constancia, alimentos reales y, cuando hace falta, suplementos bien dosificados.</p>
+                    <p class="bajada">En un mercado en expansión, deportistas y personas activas necesitan guías confiables para elegir, leer etiquetas y ajustar timing e interacciones. Marcas y tiendas, a su vez, requieren traducir evidencia en protocolos simples: evaluar pureza y procesos (p. ej., GMP), verificar perfil de aminoácidos, tolerancia digestiva y necesidades individuales. Formarte en proteína te da habilidades duraderas: lectura crítica de estudios, selección de fuentes, diseño de planes por objetivo y educación del cliente para resultados reales y sostenibles.</p>
+        
+                  </div>
+            <hr>
+            </div>
+            <!-- FIN DEL ARTÍCULO -->
+                        
+        </div>
+    
+  </main>
+    <footer>
+      <ul id="menu-footer">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="ArticulosHome.html">Artículos</a></li>
+          <li><a href="sobremi.html">Sobre mí</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+      <address>
+          Celular: <a href="#">1126762031</a>
+          Linkedin: <a href="https://www.linkedin.com/in/Marianoerbino">Mariano Erbino</a>
+          Mail: <a href="mailto:Marianoerbino@gmail.com">Marianoerbino@gmail.com</a>
+      </address>
+      <p>&copy; 2025 Erbino Mariano</p>
+  </footer>
+
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const menuBtn = document.getElementById('menuBtn');
+    const menu = document.getElementById('menu');
+    const nav = document.querySelector('.aurora-menu');
+
+    function setExpanded(value) {
+        if (menuBtn) menuBtn.setAttribute('aria-expanded', String(value));
+    }
+
+    function toggleMenu() {
+        if (!nav || !menu) return;
+        // Alternar en ambos selectores por compatibilidad con distintos estilos CSS
+        nav.classList.toggle('is-open');
+        menu.classList.toggle('open');
+
+        const isNowOpen = nav.classList.contains('is-open') || menu.classList.contains('open');
+        setExpanded(isNowOpen);
+    }
+
+    if (menuBtn) menuBtn.addEventListener('click', toggleMenu);
+
+    // Cerrar el menú en mobile al pulsar un enlace
+    if (menu) {
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 768) {
+                    nav.classList.remove('is-open');
+                    menu.classList.remove('open');
+                    setExpanded(false);
+                }
+            });
+        });
+    }
+});
+</script>
+
+</body>
+
+</html>

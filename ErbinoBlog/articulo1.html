@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articulo 1</title>
+    <link rel="icon" type="image/png" href="img/LOGOPESTAÑA.png">
+    <link rel="apple-touch-icon" href="img/LOGOPESTAÑA.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="top">
+        <marquee><a href="subscribe.html">Suscríbete</a> para recibir un e-book de programación gratis →</marquee>
+    </div>
+
+</header>
+<nav class="nav aurora-menu">
+    <!-- botón hamburguesa (visible en mobile) -->
+    <button class="menu-toggle" aria-controls="menu" aria-expanded="false" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <ul id="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="ArticulosHome.html">Artículos</a></li>
+        <li><a href="sobremi.html">Sobre mí</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+ </nav>
+
+  <main>
+
+    <div class="principal">
+            <!-- COMIENZO DEL ARTÍCULO -->
+        <div class="contenido" style="background-color: #03363a;">
+            <div class="articulo">
+                <h1>Importancia de los suplementos en el rendimiento y la salud</h1>
+                <p class="fecha">Publicado por <a href="autores.html">Erbino Mariano</a> el <a href="calendario.html"> 20 de Octubre de 2024.</a></p>
+                <img src="img/SUPLEMENTOS.webp  " alt="Portada" class="portada">
+                <p class="bajada">En pocas palabras, la importancia de los suplementos para el deporte radica en su capacidad para cubrir requerimientos específicos, optimizar la disponibilidad de energía, apoyar la síntesis y reparación muscular y mantener la hidratación y la función neuromuscular; en conjunto, corrigen déficits clave y sostienen el rendimiento, la recuperación y la consistencia, siempre como complemento de una alimentación adecuada y un plan de entrenamiento bien diseñado.</p>
+                <div class="imagen-texto">
+                <img src="img/FUERZA.jpeg" alt="Portada" class="post-img">
+                </div>
+                <div class="texto">
+                    <p class="bajada">Los suplementos no se limitan al gimnasio: pueden apoyar rendimiento, recuperación, salud general, energía y foco. Bien elegidos y dosificados, ayudan a cubrir requerimientos y potenciar resultados en distintos objetivos y estilos de vida.</p>
+                    <p class="bajada">No son solo para entrenar: los suplementos también suman en salud, recuperación, bienestar y concentración. Cuando se eligen con criterio (evidencia, calidad y dosis), potencian objetivos como fuerza, recomposición y energía. Menos promesas, más ciencia y hábito.</p>
+                    <p class="bajada">El mundo de los suplementos está en plena expansión: deportistas, personas activas y quienes buscan bienestar requieren guías confiables para elegir, dosificar y combinar productos con seguridad. Marcas y tiendas necesitan perfiles capaces de traducir evidencia científica en protocolos claros que optimicen rendimiento, recuperación y salud. Formarte en suplementos te da habilidades que seguirán siendo relevantes: lectura crítica de estudios, evaluación de calidad (GMP, etiquetas y pureza), diseño de stacks según objetivos, manejo de dosis y contraindicaciones, y educación del cliente para lograr resultados reales y sostenibles.</p>
+        
+                  </div>
+            <hr>
+            </div>
+            <!-- FIN DEL ARTÍCULO -->
+                        
+        </div>
+        <!-- aside eliminado -->
+  </main>
+    <footer>
+      <ul id="menu-footer">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="ArticulosHome.html">Artículos</a></li>
+          <li><a href="sobremi.html">E-COMMERCE</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+      <address>
+          Celular: <a href="#">1126762031</a>
+          Linkedin: <a href="https://www.linkedin.com/in/Marianoerbino">Mariano Erbino</a>
+          Mail: <a href="mailto:Marianoerbino@gmail.com">Marianoerbino@gmail.com</a>
+      </address>
+      <p>&copy; 2025 Erbino Mariano</p>
+  </footer>
+
+  <!-- Script para abrir/cerrar el menú hamburguesa (mismo que en index.html) -->
+  <script>
+    (function(){
+      const nav = document.querySelector('.aurora-menu');
+      if (!nav) return;
+      const toggle = nav.querySelector('.menu-toggle');
+      const menu = nav.querySelector('#menu');
+      if (!toggle || !menu) return;
+
+      function setExpanded(val){
+        toggle.setAttribute('aria-expanded', String(val));
+        nav.classList.toggle('is-open', val);
+        document.body.classList.toggle('menu-open', val);
+      }
+
+      toggle.addEventListener('click', function(){
+        const opened = nav.classList.contains('is-open');
+        setExpanded(!opened);
+      });
+
+      // cerrar menú al hacer click en un enlace (mobile)
+      menu.addEventListener('click', function(e){
+        if (e.target.tagName === 'A') setExpanded(false);
+      });
+
+      // cerrar con Escape
+      document.addEventListener('keydown', function(e){
+        if (e.key === 'Escape') setExpanded(false);
+      });
+    })();
+  </script>
+
+</body>
+
+</html>
