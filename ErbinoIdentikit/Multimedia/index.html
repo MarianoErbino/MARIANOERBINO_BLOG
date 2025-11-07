@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Multimedia</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" type="image/png" href="../img/icono.jpg">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="multimedia-page">
+
+  <!-- ==================== MENÚ HAMBURGUESA (MOBILE) ==================== -->
+  <nav class="hamburg-nav">
+  <button id="hamburg-btn" aria-label="Abrir menú">&#9776;</button>
+  <ul id="hamburg-menu" class="hamburg-menu">
+    <li><a href="../index.html">Inicio</a></li>
+    <li><a href="../Trabajos/Trabajos.html">Proyectos</a></li>
+    <li><a href="../Contacto/Contacto.html">Sobre mí</a></li>
+    <li><a href="../Habilidades/Habilidades.html">Habilidades</a></li>
+    <li><a href="../Juego/Juego.html">Juego</a></li>
+    <li><a class="active" href="index.html">Multimedia</a></li>
+  </ul>
+</nav>
+
+  <!-- ==================== HEADER ==================== -->
+  <header>
+    <h1>Multimedia</h1>
+    <p class="contact-info">
+      <a href="mailto:Erbinomariano@gmail.com">Erbinomariano@gmail.com</a> |
+      <a href="https://www.linkedin.com/in/erbinomariano" target="_blank" rel="noopener">LinkedIn</a> |
+      <a href="https://www.google.com/maps/place/Quilmes,+Buenos+Aires" target="_blank" rel="noopener">Quilmes, Buenos Aires</a> |
+      <a href="tel:+5491126762031">+54 9 11 2676 2031</a>
+    </p>
+  </header>
+
+  <!-- ==================== NAV DESKTOP ==================== -->
+  <nav class="main-nav">
+    <a href="../index.html">Inicio</a>
+    <a href="../Trabajos/Trabajos.html">Proyectos</a>
+    <a href="../Contacto/Contacto.html">Sobre mí</a>
+    <a href="../Habilidades/Habilidades.html">Habilidades</a>
+    <a href="../Juego/Juego.html">Juego</a>
+    <a class="active" href="index.html">Multimedia</a>
+  </nav>
+
+  <!-- ==================== CONTENIDO PRINCIPAL ==================== -->
+  <main class="multimedia-contenedor">
+    <div class="multimedia-grid">
+      <!-- Video principal -->
+      <section class="video-principal">
+        <div class="video-frame">
+          <video id="video-principal" class="principal-video" controls autoplay muted playsinline preload="metadata" poster="../img/poster-principal.jpg">
+            <source id="video-source" src="videos/Video1.mp4" type="video/mp4">
+            Tu navegador no soporta video HTML5.
+          </video>
+        </div>
+      </section>
+
+      <!-- Playlist lateral -->
+      <aside class="playlist-aside" aria-label="Lista de canciones">
+        <h2 class="playlist-title">Playlist</h2>
+        <ul class="playlist" id="playlist">
+          <li>
+            <button class="track active" data-src="videos/Video1.mp4" data-title="Principal" data-poster="../img/poster-principal.jpg">Principal</button>
+          </li>
+          <li>
+            <button class="track" data-src="videos/Video2.mp4" data-title="Lewis Capaldi" data-poster="../img/poster1.jpg">Lewis Capaldi</button>
+          </li>
+            <li>
+            <button class="track" data-src="videos/Video3.mp4" data-title="Airbag" data-poster="../img/poster2.jpg">Airbag</button>
+          </li>
+          <li>
+            <button class="track" data-src="videos/Video3.mp4" data-title="Ludovico Einaudi" data-poster="../img/poster3.jpg">Ludovico Einaudi (1)</button>
+          </li>
+          <li>
+            <button class="track" data-src="videos/Video4.mp4" data-title="Ludovico Einaudi" data-poster="../img/poster4.jpg">Ludovico Einaudi (2)</button>
+          </li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <nav class="links-nav">
+      <a href="../index.html">Inicio</a> |
+      <a href="../Trabajos/Trabajos.html">Proyectos</a> |
+      <a href="../Habilidades/Habilidades.html">Habilidades</a> |
+      <a href="../Juego/Juego.html">Juego</a> |
+      <a href="../Contacto/Contacto.html">Sobre mí</a> |
+      <a class="active" href="index.html">Multimedia</a>
+    </nav>
+  </footer>
+  <script src="../js/home.js"></script>
+  <script src="../js/multimedia.js"></script>
+</body>
+</html>
